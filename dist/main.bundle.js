@@ -41,7 +41,7 @@ var SurveyService = (function () {
         this._requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* RequestOptions */]({
             headers: myHeaders
         });
-        this._apiUrl = "http://localhost:5265";
+        this._apiUrl = "http://spacehivedevapi.azurewebsites.net";
         this._lastStepCompleted = 0;
         this._impactList = [
             { Id: 1, Name: "makes the area safer", Selected: false },
