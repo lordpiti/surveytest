@@ -1,0 +1,107 @@
+// Core variables and mixins
+@import "_variables.less";
+
+//
+// Transitions
+// --------------------------------------------------
+.newpage.ng-enter {
+    -moz-transition: 0.3s 0.3s linear all;
+    -o-transition: 0.3s 0.3s linear all;
+    -webkit-transition: 0.3s 0.3s linear all;
+    transition: 0.3s 0.3s linear all;
+    opacity: 0;
+}
+
+.newpage.ng-enter.ng-enter-active {
+    opacity: 1;
+}
+
+// .newpage.ng-leave {
+//     -moz-transition: 0.3s linear all;
+//     -o-transition: 0.3s linear all;
+//     -webkit-transition: 0.3s linear all;
+//     transition: 0.3s linear all;
+//     opacity: 1;
+// }
+//
+// .newpage.ng-leave.ng-leave-active {
+//     opacity: 0;
+// }
+
+//
+// Load spinner
+// --------------------------------------------------
+@spinner-size: 200px;
+@spinarea-height: 578px;
+@spinner-colour: #EEEEEE;
+
+.spinner-in-background {
+    min-height: 578px;
+}
+
+.load-spinner {
+    position: absolute;
+    height: @spinarea-height;
+    text-align: center;
+
+    &.ng-enter {
+        -webkit-transition: opacity 0.3s linear 0.3s;
+        -moz-transition: opacity 0.3s linear 0.3s;
+        -o-transition: opacity 0.3s linear 0.3s;
+        transition: opacity 0.3s linear 0.3s;
+    }
+
+    &.ng-leave {
+        -webkit-transition: opacity 0.3s linear;
+        -moz-transition: opacity 0.3s linear;
+        -o-transition: opacity 0.3s linear;
+        transition: opacity 0.3s linear;
+    }
+
+    &.ng-enter,
+    &.ng-leave.ng-leave-active {
+        opacity: 0;
+    }
+
+    &.ng-leave,
+    &.ng-enter.ng-enter-active {
+        opacity: 1;
+    }
+
+    i {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        color: @spinner-colour;
+        width: @spinner-size;
+        height: @spinner-size;
+        font-size: @spinner-size;
+    }
+
+    @media (min-width: 1200px) {
+        width: 1112px;
+    }
+
+    @media (max-width: 1199px) {
+        width: 912px;
+    }
+
+    @media (max-width: 991px) {
+        width: 692px;
+    }
+}
+
+
+@media (max-width: @screen-xs-max) {
+    .load-spinner {
+        width: 100%;
+
+        .fa-cog {
+            font-size: 50px;
+            height: 50px;
+        }
+    }
+}

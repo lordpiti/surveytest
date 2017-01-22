@@ -1,0 +1,307 @@
+﻿.discover-filterby {
+    margin-top:10px;
+    padding-right:31px;
+}
+
+#MapContainer {
+
+    .panel {
+        border-top-color: white;
+        border-right: none;
+        border-left: none;
+
+        .panel-heading & {
+            background-color: blue;
+        }
+
+        .panel-title {
+            text-align: center;
+        }
+
+        .panel-heading {
+            background-color: #404042;
+
+            h4 a {
+                color: white !important;
+            }
+
+            a:after {
+                content: '-';
+                width: 26px;
+                height: 25px;
+                padding: 0 10px;
+                color: #fff;
+                text-align: right;
+                float: right;
+                font-size: 21px;
+            }
+
+            &:not(.collapsed) a:before {
+                margin-left: 2px;
+                margin-right: 3px;
+            }
+
+            .panel-collapse > .panel-body {
+                border: none;
+            }
+
+            a.collapsed:after {
+                content: '+';
+            }
+        }
+    }
+
+    .panel-group .panel + .panel {
+        margin-top: 0;
+    }
+
+    .dotted-line {
+        width: 60%;
+    }
+}
+
+
+
+
+.MovementMap {
+    @media (min-width: 768px) {
+        #map-search {
+
+            .fixed-position {
+                position: relative;
+                top: 30px;
+            }
+        }
+
+        .map-selection {
+            position: relative;
+        }
+
+        .selection{
+            top: 100px !important;
+        }
+    }
+
+
+}
+
+
+#map-search {
+    display:none;
+    height:0;
+    @media (min-width: 768px) {
+        .fixed-position {
+            position: absolute;
+            top: 180px;
+            left: 10px;
+            background-color:white;
+            width: 350px;
+            z-index:10;
+        }
+       
+    }
+
+    #SearchButton {
+        background-color: #00ADEF;
+    }
+
+
+
+    
+}
+
+#MapContainer {
+    height:100%;
+}
+
+#MapContainer.MovementMap {
+    height:90%;
+}
+
+#MobileFilters {
+    text-decoration: underline;
+}
+
+#MapSearchFilterModal {
+
+    .modal-content {
+        background-color: #00ADEF;
+        color:white;
+    }
+    .modal-header {
+        border: 0;
+    }
+
+    .btn {
+        background-color: #404042;
+        color: white;
+    }
+}
+
+
+.SelectedLink:hover {
+    h4 {
+        color:#00ADEF;
+    }
+}
+
+
+.map-page-wrap {
+    height:100%;
+}
+
+@media (min-width: 768px) {
+    .mobile-filter {
+         display:none;
+    }
+
+    
+    .SelectedLink {
+        .SelectedIntro {
+            color: #404042 !important;
+        }
+        h4 {
+            color:#00ADEF;
+        }
+    }
+    .map-page-wrap {
+        padding-bottom: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    .filter-status {
+         display:none;
+    }
+    .map-page-wrap {
+        padding-bottom: 151px;
+    }
+
+
+}
+
+
+        
+
+.map-selection {
+    display: none;
+
+    .ShowMore {
+        text-align: center;
+    }
+
+    .panel-group {
+        margin-bottom: 0;
+    }
+
+    @media (min-width: 768px) {
+
+        .selection {
+            position: absolute;
+            top: 250px;
+            left: 10px;
+            background-color: white;
+            width: 350px;
+            z-index: 10;
+        }
+
+        #MobileView {
+            display: none;
+        }
+
+
+        .SelectedClose {
+            position: relative;
+            left: 333px;
+        }
+
+
+        .SelectedHeader {
+            text-align: center;
+        }
+
+        h5 {
+            text-align: center;
+        }
+
+        .SelectedPledged {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            margin-top: 7px;
+        }
+
+        .GoalContainer {
+            padding: 5px;
+        }
+
+        .SelectedGoal, .PledgeText {
+            color: gray !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .selection {
+            position: fixed;
+            bottom: -20px;
+            width: 100%;
+            height: 80px;
+            z-index: 100;
+        }
+
+        #DesktopView {
+            display: none;
+        }
+
+        .list-inline {
+            margin-top: -5px;
+        }
+
+        .img-wrapper {
+            float: left;
+            padding-right: 10px;
+            width: 128px;
+        }
+
+        .panel-body {
+            height: 30px;
+        }
+
+        .progress, .text-muted {
+            display: none;
+        }
+
+        h4 {
+            margin-top: -10px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .SelectedClose {
+            position: absolute;
+            right: 5px;
+        }
+
+        .SelectedHeader {
+            text-align: center;
+        }
+
+        .panel.funded .img-wrapper:after {
+            width: 67px;
+            height: 51px;
+            background: url(home-sprite.png) 12px -34px;
+            background-size: 236%;
+        }
+    }
+
+
+    .SelectedClose {
+        display: inline;
+        z-index: 100;
+        cursor: pointer;
+    }
+
+    .progress {
+        height: 10px;
+    }
+}

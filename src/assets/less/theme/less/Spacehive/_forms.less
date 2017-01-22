@@ -1,0 +1,105 @@
+// Core variables and mixins
+@import "_variables.less";
+
+//
+// Forms
+// --------------------------------------------------
+
+.input-group {
+
+    &.date {
+
+        .input-group-addon {
+            cursor: pointer;
+        }
+    }
+}
+
+.form-control {
+    //box-shadow: none !important;
+
+    &:focus {
+        background-color: lighten(@brand-primary, 52.25%);
+    }
+}
+
+.form-control-static {
+    &.icon {
+        padding: 0;
+
+        img {
+            height: @input-height-base;
+            max-width: 100%;
+        }
+    }
+}
+
+.form-spaced-groups .form-group {
+    padding: @font-size-base 0;
+}
+
+textarea.form-control {
+    min-height: @input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+    max-height: @font-size-base*50;
+    max-width: 100%;
+    min-width: 100%;
+
+    &.textarea-sm {
+        max-height: @font-size-base*18;
+    }
+}
+
+i.required-input {
+    font-size: x-small;
+    color: red;
+    vertical-align: super;
+}
+
+.validation-error-label {
+    color: @state-danger-text;
+    font-weight: bold;
+}
+
+.hide-during-boot {
+    display: none;
+}
+
+div.validation-shock {
+    -moz-animation: shock 200ms ease-in-out;
+    -o-animation: shock 200ms ease-in-out;
+    -webkit-animation: shock 200ms ease-in-out;
+    animation: shock 200ms ease-in-out;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    /*font-size: 100px;*/
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+blockquote.help-block {
+    font-size: inherit;
+    border-left: 5px solid #d9edf7 !important;
+    color: @state-info-text;
+    margin: 0 0 20px !important;
+    padding: 10px 20px !important;
+}
+
+.text-readonly {
+    color: @gray-brand;
+}

@@ -1,0 +1,114 @@
+﻿//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+//** Deprecated `@screen-xs` as of v3.0.1
+@screen-xs:                  480px;
+//** Deprecated `@screen-xs-min` as of v3.2.0
+@screen-xs-min:              @screen-xs;
+//** Deprecated `@screen-phone` as of v3.0.1
+@screen-phone:               @screen-xs-min;
+
+// Small screen / tablet
+//** Deprecated `@screen-sm` as of v3.0.1
+@screen-sm:                  768px;
+@screen-sm-min:              @screen-sm;
+//** Deprecated `@screen-tablet` as of v3.0.1
+@screen-tablet:              @screen-sm-min;
+
+// Medium screen / desktop
+//** Deprecated `@screen-md` as of v3.0.1
+@screen-md:                  992px;
+@screen-md-min:              @screen-md;
+//** Deprecated `@screen-desktop` as of v3.0.1
+@screen-desktop:             @screen-md-min;
+
+// Large screen / wide desktop
+//** Deprecated `@screen-lg` as of v3.0.1
+@screen-lg:                  1200px;
+@screen-lg-min:              @screen-lg;
+//** Deprecated `@screen-lg-desktop` as of v3.0.1
+@screen-lg-desktop:          @screen-lg-min;
+
+// So media queries don't overlap when required, provide a maximum
+@screen-xs-max:              (@screen-sm-min - 1);
+@screen-sm-max:              (@screen-md-min - 1);
+@screen-md-max:              (@screen-lg-min - 1);
+
+@brand-primary: #00ADEF;
+@border-radius-base: 2px;
+
+// --------------------------------------------------
+
+.mediaelement-player,
+.mediaelement-player a {
+    outline: none !important;
+}
+
+.mejs-overlay-loading {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-radius: 50%;
+}
+
+.mejs-controls .mejs-time-rail .mejs-time-loaded {
+    background-color: @brand-primary;
+}
+
+.mejs-contextmenu .mejs-contextmenu-item:hover {
+    background-color: @brand-primary;
+}
+
+.mejs-controls .mejs-speed-button .mejs-speed-selector ul li label.mejs-speed-selected {
+    color: @brand-primary;
+}
+
+.mejs-container-fullscreen video {
+    height: auto !important;
+}
+
+//
+// FULL WIDTH VIDEO
+///////////////////
+
+.mejs-container.full-width-video {
+    width: 100% !important;
+    //height: auto !important;
+    //padding-top: 57%;
+    height: 548px !important;
+
+    .mejs-overlay, .mejs-poster {
+        background-position: center center;
+        background-size: cover;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .mejs-mediaelement video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+
+@media (max-width: @screen-sm-max) {
+    .mejs-container.full-width-video {
+        height: 422px !important;
+    }
+}
+
+@media (max-width: @screen-xs-max) {
+    .mejs-container.full-width-video {
+        height: 260px !important;
+    }
+}
+
+@media (max-width: @screen-xs) {
+    .mejs-container.full-width-video {
+        height: 180px !important;
+    }
+}

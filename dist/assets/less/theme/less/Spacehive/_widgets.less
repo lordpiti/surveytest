@@ -1,0 +1,155 @@
+// Core variables and mixins
+@import "_variables.less";
+
+//
+// Widgets
+// --------------------------------------------------
+
+/* Google maps */
+
+#map-canvas {
+    border-radius: @border-radius-base;
+    height: 550px;
+}
+
+#map-canvas-contact {
+    height: 400px;
+}
+
+/* End Google maps */
+
+/* Galleria */
+
+.galleria {
+    width: 100%;
+}
+
+.galleria-theme-classic {
+    background-color: darken(@brand-primary, 15%);
+    border-radius: @border-radius-base;
+
+    .galleria-thumbnails {
+        .galleria-image {
+            border-color: darken(@brand-primary, 30%);
+        }
+    }
+
+    .galleria-info-text {
+        background-color: rgba(0,0,0,0.6);
+    }
+}
+
+.galleria-lightbox-shadow {
+    border-radius: @border-radius-base;
+}
+
+/* End Galleria */
+
+/* Uploaders, input type file */
+
+.img-uploader.logo,
+.img-uploader.picture {
+    padding: 0;
+    position: relative;
+}
+.img-uploader.logo > input[type="file"],
+.img-uploader.picture > input[type="file"] {
+    cursor: pointer;
+    height: 100%;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; // IE8
+    filter: alpha(opacity=0); // IE 5-7
+    opacity: 0; // Modern Browsers
+    padding: 7px 0;
+    position: absolute;
+    width: 100%;
+}
+.img-uploader.logo > img,
+.img-uploader.picture > img {
+    max-width: 100%;
+}
+.img-uploader.logo > img {
+    height: @input-height-base;
+}
+
+/* End Uploaders, input type file */
+
+/* Uploader progress and submit */
+
+@uploader-error-color: rgb(226, 69, 26);
+@uploader-progressbar-color: rgb(98, 144, 242);
+@uploader-backgroundbar-color: rgb(208, 208, 208);
+@uploader-thickness: 2px;
+
+.upload-progress {
+     
+    -moz-transition: 0.5s linear all;
+    -o-transition: 0.5s linear all;
+    -webkit-transition: 0.5s linear all;
+    transition: 0.5s linear all;
+    opacity: 0;
+    display: inline-block;
+    padding: 0 8px;
+
+    &.inprogress {
+        -moz-transition: 0.5s linear all;
+        -o-transition: 0.5s linear all;
+        -webkit-transition: 0.5s linear all;
+        transition: 0.5s linear all;
+        opacity: 1;
+
+        &.error {
+            > span {
+                color: @uploader-error-color;
+            }
+            > div > div {
+                width: 100%;
+                background-color: @uploader-error-color;
+            }
+        }
+    }   
+    
+    > div {
+        margin-top: 4px;
+        width: 120px;
+        height: @uploader-thickness;
+        background-color: @uploader-backgroundbar-color;
+
+        > div {
+            height: 100%;
+            width: 0;
+            background-color: @uploader-progressbar-color;
+        }
+    }
+}
+
+.video-progress-area {
+    min-height: 100px;
+    max-height: 290px;
+    video {
+        max-height: 280px;
+    }
+}
+
+.video-progress {
+    width: 120px;
+    height: 26px;
+    position: absolute;
+    left: 50%;
+    margin-left: -60px;
+    top: 50%;
+    margin-top: 13px;
+
+    > div {
+        margin-top: 4px;
+        width: 120px;
+        height: @uploader-thickness;
+        background-color: @uploader-backgroundbar-color;
+
+        > div {
+            height: 100%;
+            width: 0;
+            background-color: @uploader-progressbar-color;
+        }
+    }
+}
+/* End Uploader progress and submit */

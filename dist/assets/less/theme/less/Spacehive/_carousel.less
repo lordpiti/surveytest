@@ -1,0 +1,73 @@
+// Core variables and mixins
+@import "_variables.less";
+
+//
+// Carousel
+// --------------------------------------------------
+
+.carousel {
+
+    .carousel-control {
+        width: 9%;
+
+        &.left {
+            background-image: none;
+        }
+
+        &.right {
+            background-image: none;
+        }
+    }
+    .carousel-container {
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        margin: 0 auto;
+        max-width: @container-large-desktop - 30px;
+        padding-left: 11%;
+        padding-right: 11%;
+    }
+
+    &.quotes {
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        //min-height: 410px;
+
+        .sh-quote {
+            font-size: 28px;
+            margin-bottom: @font-size-base*2;
+
+            &:before
+            {
+            content: '\201C';
+            }
+
+            &:after
+            {
+            content: '\201D';
+            }
+
+            a {
+                color: inherit;
+                text-decoration: underline;
+            }
+
+            + footer {
+
+                a {
+                    color: inherit;
+                    text-decoration: underline;
+                }
+
+            }
+        }
+    }
+}
+
+// Specific background images
+
+/*#quotes_about {
+    background-image: url('https://berkshireviews.files.wordpress.com/2012/05/img_1496.jpg?w=900');
+}*/
+

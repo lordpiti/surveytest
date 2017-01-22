@@ -1,0 +1,106 @@
+﻿//@dropzone-backcolor: rgb(245, 245, 245);
+@brand-primary: #00ADEF;
+@border-radius-base: 2px;
+@dropzone-border-type: dashed;
+@dropzone-border-width: 2px;
+
+.dropzone {
+    background-color: #f9f9f9;
+    border: @dropzone-border-width @dropzone-border-type @brand-primary;
+    border-radius: @border-radius-base;
+    display: table;
+    height: 150px;
+    padding: 0;
+    width: 100%;
+}
+
+.dropzone:hover,
+.dropzone:focus {
+    background-color: @brand-primary;
+    border-color: #f9f9f9;
+    color: #fff;
+}
+
+.dropzone .dz-message {
+    display: table-cell;
+    font-size: 1.5em;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.dz-image {
+    border-radius: 2px;
+    border: solid lightgrey 1px;
+    padding: 2px;
+    width: 126px;
+    height: 126px;
+}
+
+.dropzone .dz-preview.dz-image-preview {
+    background: transparent;
+}
+
+.dropzone .dz-preview .dz-image {
+    border: solid lightgray 1px;
+    padding: 2px;
+    border-radius: 2px;
+    overflow: hidden;
+    width: 126px;
+    height: 126px;
+    position: relative;
+    display: block;
+    z-index: 10;
+}
+
+.dropzone .dz-preview .dz-progress {
+    opacity: 1;
+    z-index: 1000;
+    pointer-events: none;
+    position: absolute;
+    height: 4px;
+    left: 50%;
+    top: 50%;
+    width: 80px;
+    margin-left: -40px;
+    background: rgba(255, 255, 255, 0.9);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    overflow: hidden;
+}
+
+.dropzone .dz-preview .dz-progress .dz-upload {
+    background: rgb(73, 105, 173);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    -moz-transition: width 300ms ease-in-out;
+    -o-transition: width 300ms ease-in-out;
+    -webkit-transition: width 300ms ease-in-out;
+    transition: width 300ms ease-in-out;
+}
+
+.dropzone .fa-film {
+    display: block;
+    margin-bottom: 9px;
+    font-size: 2em;
+}
+
+.dropzoneError {
+    border-color: @alert-danger-text !important;
+}
+
+.dropzoneVideoThumb {
+    height: 150px !important;
+    width: 100%;
+}
+
+.has-error {
+    .dropzone {
+        border-color: @alert-danger-text !important;
+    }
+}

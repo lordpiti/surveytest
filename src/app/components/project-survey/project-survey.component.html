@@ -1,0 +1,27 @@
+<div class="row sh-hives sh-projectFollowerSurvey">
+	<div class="col-sm-4" *ngIf="ProjectFollowedData">
+		<div class="padding1 lg" [ngClass]="{'bg-white': IsMain,'green13': !IsMain, 'white': !IsMain }">
+			<p class="bold" *ngIf="IsMain">Hi {{ProjectFollowedData.UserName}}!</p>
+			<p class="margin-top2">
+			{{ProjectFollowedData.TimeAgo}} you pledged £{{ProjectFollowedData.PledgeAmount}} to <a [ngClass]="{'yellow': !IsMain}" href="https://www.spacehive.com/{{ProjectFollowedData.ProjectUrl}}">{{ProjectFollowedData.ProjectName}}</a> and on {{ProjectFollowedData.DateFounded | date: 'dd MMMM yyyy'}} the project hit its crowdfunding target! </p>
+			<div *ngIf="IsMain">
+				<p class="margin-top2">Please take this short survey to let us know how this project has made an impact on you and your area.</p>
+				<a href="" class="btn btn-primary marked margin-top2 bold" [routerLink]="['step1']" (click)="Test1()" >START SURVEY</a>
+			</div>
+		</div>
+		<img src="{{ProjectFollowedData.ProjectPicture.Url}}" *ngIf="!IsMain" width="100%">
+	</div>
+	<div class="col-sm-8" *ngIf="ProjectFollowedData">
+
+		<div *ngIf="IsMain" >
+			<img src="{{ProjectFollowedData.ProjectPicture.Url}}" *ngIf="!ProjectFollowedData.ProjectVideo" class="img-responsive">
+			<video style="width:100%;height:100%;" id="dsf" class="mediaelement-player sh-mediaelementplayer" controls="controls" preload="none" 
+			poster="//sbndv3.cloudimg.io/s/crop/755x425{{ProjectFollowedData.ProjectPicture.Url}}" *ngIf="ProjectFollowedData.ProjectVideo">
+            	<source type="video/mp4" src="{{ProjectFollowedData.ProjectVideo.Url}}" />
+        	</video>
+		</div>
+		<div class="padding1 {{BackgroundRightPanelClass}}" [hidden]="IsMain">
+			<router-outlet></router-outlet>
+		</div>
+	</div>
+</div>

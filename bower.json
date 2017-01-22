@@ -1,0 +1,11 @@
+{
+  "name": "Surveys",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "^2.1.4",
+    "bootstrap": "3.3.2",
+    "mediaelement": "2.19.0",
+    "bootstrap-switch": "3.3.2",
+    "toastr": "^2.1.2"
+	}
+}

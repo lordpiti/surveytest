@@ -1,0 +1,1028 @@
+﻿@import "_variables.less";
+@import "_mixins.less";
+
+
+.sh-projectPages {
+    .fa-map-marker {
+        font-size: 1.5em;
+        vertical-align: bottom;
+    }
+
+    .fundraisingStage {
+        background: url('/Content/images/ProjectPage/project-pages-sprite.png') no-repeat -44px 0;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        vertical-align: bottom;
+    }
+
+    .ideaStage {
+        background: url('/Content/images/ProjectPage/project-pages-sprite.png') no-repeat -88px 0;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        vertical-align: bottom;
+    }
+
+    .deliveryStage {
+        background: url('/Content/images/ProjectPage/project-pages-sprite.png') no-repeat -22px 0;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        vertical-align: bottom;
+    }
+
+    .ideaStage-white {
+        background: url('/Content/images/ProjectPage/project-pages-sprite.png') no-repeat -107px 0;
+        width: 17px;
+        height: 20px;
+        display: inline-block;
+    }
+
+    .fundraisingStage-white {
+        background: url('/Content/images/ProjectPage/project-pages-sprite.png') no-repeat -66px 0;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+    }
+
+    .deliveryStage-white {
+        background: url('/Content/images/ProjectPage/project-pages-sprite.png') no-repeat 0 0;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+    }
+
+    .mainProjectImage {
+        max-height: 435px;
+    }
+
+    #project-map-canvas {
+        height: 350px;
+    }
+
+    .projectTitle p {
+        margin-top: 17px;
+        margin-bottom: 25px;
+    }
+
+    a[role="button"] {
+        cursor: pointer;
+    }
+
+    .btn-yellow {
+        background-color: @brand-secondary;
+        color: @gray-darker;
+        width: 100%;
+        height: 50px;
+        font-size: 1.5em;
+
+        &:hover {
+            color: @gray-dark;
+            background-color: darken(@brand-secondary, 5%);
+        }
+    }
+
+    .animatedBtnWrapper {
+        position: absolute;
+        top: 57px;
+        right: 0;
+        z-index: 100;
+        -moz-transition-property: top;
+        -o-transition-property: top;
+        -webkit-transition-property: top;
+        transition-property: top;
+        -moz-transition-duration: .3s;
+        -o-transition-duration: .3s;
+        -webkit-transition-duration: .3s;
+        transition-duration: .3s;
+        -moz-transition-timing-function: linear;
+        -o-transition-timing-function: linear;
+        -webkit-transition-timing-function: linear;
+        transition-timing-function: linear;
+    }
+
+    .animateBtn {
+        top: 0;
+    }
+
+    .shareIconsWrapper {
+        line-height: 30px;
+
+        .shareIcons {
+            > span:nth-child(2) .fa,
+            > span:nth-child(3) .fa {
+                position: relative;
+                top: 2px;
+            }
+
+            > span:first-child .fa {
+                vertical-align: middle;
+            }
+
+            a {
+                color: @gray-dark;
+                text-decoration: none;
+            }
+        }
+
+        .fa {
+            display: inline-block;
+            line-height: 26px;
+            font-size: 1.5em;
+        }
+    }
+
+    .ppInfo {
+        margin-top: 59px;
+    }
+
+    .small-img  {
+        height: 64px;
+        width: 64px;
+    }
+
+    .modal {
+        z-index: 999999;
+    }
+
+    #ppModal {
+        .modal-content {
+            .fa {
+                width: 18px;
+            }
+        }
+    }
+
+    .tabsMenu {
+        height: 70px;
+        line-height: 65px;
+        border-top: 1px solid @table-border-color;
+        border-bottom: 1px solid @table-border-color;
+
+        .container {
+            position: relative;
+            z-index: 300;
+            overflow: hidden;
+        }
+
+        ul.nav-tabs {
+            list-style: none;
+            margin: 0;
+            border: none;
+
+            li:not(.btnWrapper) {
+                display: inline-block;
+
+                > a {
+                    color: @gray-darker;
+                    border: none;
+                    margin: 0;
+                    padding: 15px 0;
+
+                    &:hover, &:focus {
+                        color: @brand-primary;
+                        text-decoration: none;
+                        background-color: @white;
+                    }
+                }
+            }
+
+            .btn-yellow {
+                height: 45px;
+            }
+        }
+    }
+
+    .readMoreInfo {
+        max-height: 143px;
+
+        li {
+            margin-left: 2px;
+            padding: 0 0 5px 24px;
+            background: url(/Content/images/bullet.gif) no-repeat 0 5px;
+            list-style: none;
+        }
+
+        &.collapsible-text .read-more {
+            line-height: 4;
+        }
+    }
+
+    .projectSection {
+        border-top: 1px solid @table-border-color;
+        padding: 23px 0;
+
+        &#location {
+            padding-bottom: 10px;
+        }
+    }
+
+    .location {
+        max-height: 433px;
+    }
+
+    .collapsible-text {
+        overflow: hidden;
+        padding-bottom: 1.5em;
+        position: relative;
+        -webkit-transition: max-height 1s;
+        -moz-transition: max-height 1s;
+        -o-transition: max-height 1s;
+        transition: max-height 1s;
+    }
+
+    .collapsed {
+        max-height: 5000px !important;
+
+        .read-more {
+            a {
+                &:after {
+                    content: "- Less";
+                }
+            }
+        }
+    }
+
+    .read-more {
+        display: block;
+        background: #fff;
+        background: -moz-linear-gradient(top,rgba(255,255,255, 0.5) 0,#fff 30%);
+        background: -webkit-gradient(linear,left top,left bottom,color-stop(0,rgba(255,255,255, 0.5)),color-stop(30%,#fff));
+        background: -webkit-linear-gradient(top,rgba(255,255,255, 0.5) 0,#fff 30%);
+        background: -o-linear-gradient(top,rgba(255,255,255, 0.5) 0,#fff 30%);
+        background: -ms-linear-gradient(top,rgba(255,255,255, 0.5) 0,#fff 30%);
+        background: linear-gradient(to bottom,rgba(255,255,255, 0.5) 0,#fff 30%);
+        bottom: 0;
+        height: 2.5em;
+        line-height: 2.5em;
+        position: absolute;
+        text-align: left;
+        width: 100%;
+        font-weight: bold;
+
+        a {
+            &:after {
+                content: "+ More";
+            }
+        }
+    }
+
+    .stick {
+        position: fixed;
+        top: 0;
+        z-index: 9999;
+        width: 100%;
+        background-color: white;
+
+        + .tab-content {
+            margin-top: 110px;
+        }
+    }
+
+    .projectTab .readMoreInfo {
+        margin-bottom: 18px;
+    }
+
+    .projectTitle .tooltip {
+        .connectingLine {
+            border: 1px solid #fff;
+            margin-left: 10px;
+            margin-right: 5px;
+            position: absolute;
+            left: 39px;
+            top: 30px;
+            width: 77px;
+        }
+
+        .inline-block {
+            margin-right: 67px;
+        }
+
+        .inline-block:last-child {
+            margin-right: 0;
+        }
+
+        .connectingLine.last-line {
+            left: 151px;
+            width: 80px;
+        }
+
+        .connectingLine.first-line + .inline-block {
+            margin-right: 58px;
+        }
+
+        .tooltip-inner {
+            max-width: 300px;
+            width: 300px;
+        }
+    }
+
+    .fb_iframe_widget,
+    .fb_iframe_widget span,
+    .fb_iframe_widget span iframe[style] {
+        min-width: 100% !important;
+        width: 100% !important;
+    }
+
+    .shareButtons {
+        a:first-child {
+            margin-right: 10px;
+        }
+
+        a {
+            width: 137px;
+        }
+    }
+
+    .mejs-overlay, .mejs-poster {
+        background-position: center center;
+        background-size: cover;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .mejs-container.projectPage.mejs-container-fullscreen,
+    .video-wrapper .mejs-container.mejs-container-fullscreen,
+    .slides .slide .mejs-container.mejs-container-fullscreen {
+        height: 100% !important;
+    }
+
+    #shareProjectModal .btn {
+        width: 115px;
+        text-align: center;
+    }
+
+    .pledgeInfoSections .progress {
+        height: 33px;
+        border-radius: 18px;
+    }
+
+    .pledgeInfoSections .btn-yellow {
+        line-height: 1.8;
+    }
+
+    #costs, #backers {
+        p {
+            margin: 0;
+        }
+    }
+
+    #costs .bubble-text {
+        max-width: 90%;
+    }
+
+    .howMuch {
+        line-height: 3;
+
+        .numeric {
+            font-size: 2em;
+        }
+    }
+    
+    .tab-pane {
+        .progress {
+            height: 40px;
+            border-radius: 18px;
+            position: relative;
+            z-index: 200;
+
+            .progress-bar {
+                -moz-transition: width .6s ease, left .6s ease;
+                -o-transition: width .6s ease, left .6s ease;
+                -webkit-transition: width .6s ease, left .6s ease;
+                transition: width .6s ease, left .6s ease;
+                position: absolute;
+                height: 40px;
+                border-radius: 0 18px 18px 0;
+                box-shadow: 2px 0 @white !important;
+            }
+
+            .progress-bar:first-child {
+                border-radius: 18px;
+            }
+        }
+
+       
+        
+    }
+
+    .tabsMenu .tab-pane {
+        min-height: 450px;
+    }
+
+    .bubble {
+
+        .other-cost-items .dotted-line {
+            background-position-y: 80%;
+        }
+
+        .img-circle {
+            color: @white;
+            font-weight: bold;
+            height: 65px;
+            width: 65px;
+            text-align: center;
+            line-height: 62px;
+            .transition-mixin();
+        }
+
+        &:hover .img-circle {
+            .scale-mixin();
+        }
+
+        .read-more {
+            background: transparent;
+            position: static;
+            margin-left: 10px;
+            width: 50px;
+        }
+    }
+
+    #backers {
+        .badge {
+            background-color: @brand-primary;
+        }
+
+        .bubble .cell:last-child {
+            width: 100%;
+        }
+    }
+
+    .dotted-line {
+        overflow: hidden;
+        background: url('/Content/images/ProjectPage/costs-line-dark.gif')repeat-x 0 18px;
+        background-position-y: 58%;
+        width: 100%;
+    }
+
+    .bubble-text {
+        background-color: @gray-lighter;
+        padding-right: 5px;
+        z-index: 300;
+    }
+
+    .bubble-text-secondary {
+        background-color: @brand-secondary;
+        padding-right: 5px;
+        z-index: 300;
+    }
+
+    .bubble-text-lightblue {
+        background-color: #e6f8ff;
+        padding-right: 5px;
+        z-index: 300;
+    }
+
+    .bubble-text-white {
+        background-color: @white;
+        padding-right: 5px;
+        z-index: 300;
+    }
+
+    .bubble-img {
+        height: 65px;
+        width: 65px;
+    }
+    .bubble-img.bubble-small{
+        height:45px !important;
+        width:45px !important;
+    }
+
+    .other-cost-items {
+        -webkit-transition: max-height 0.5s;
+        -moz-transition: max-height 0.5s;
+        -o-transition: max-height 0.5s;
+        transition: max-height 0.5s;
+        max-height: 0;
+        overflow: hidden;
+
+        ul {
+            list-style: none;
+            padding-left: 78px;
+        }
+    }
+
+    .collapsed .other-cost-items {
+        max-height: 5000px;
+    }
+
+    .row-group {
+        display: table-row-group;
+    }
+
+    .table-row {
+        display: table-row;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .plusMinus {
+        color: @gray-dark;
+        text-decoration: none;
+
+        &.collapsed .fa:before {
+            content: "\f055";
+        }
+
+        .fa:before {
+            content: "\f056";
+        }
+    }
+
+    .backersLikesWrapper {
+        min-height: 450px;
+
+        .nav-tabs {
+            list-style: none;
+            margin: 0;
+            border: none;
+
+            > li {
+                float: none;
+                display: inline-block;
+                *display: inline;
+
+                > a {
+                    border: none;
+                }
+
+                &.active > a {
+                    border: none;
+                    background-color: @gray-lighter;
+
+                    &:hover:after {
+                        width: initial;
+                    }
+                }
+            }
+        }
+
+        .bubble-text span {
+            font-weight: normal;
+        }
+
+        .show-more {
+            cursor: pointer;
+            color: @brand-primary;
+            position: relative;
+            top: -20px;
+
+            &.less:after {
+                content: '- Show less';
+            }
+
+            &:after {
+                content: '+ Show more';
+            }
+
+            &:hover {
+                color: @gray-dark;
+                text-decoration: underline;
+            }
+        }
+
+        #collapsePledges .bubble:nth-child(n+11) {
+            display: none;
+        }
+
+        #collapseLikes {
+            .bubble {
+                float: left;
+
+                &:nth-child(n+10) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .likesWrapper {
+        min-height: 227px;
+
+        .likes {
+            margin-bottom: 0;
+            max-height: 178px;
+            overflow: hidden;
+        }
+    }
+
+    .fa-heart {
+        vertical-align: middle;
+        font-size: 1.5em;
+    }
+
+    .spinnerWrapper {
+        min-height: 500px;
+        padding: 20px;
+    }
+
+    .projectUnsuccessful .infoMessage {
+        margin-bottom: 226px;
+    }
+
+    .projectCollectingFunds .infoMessage {
+        margin-bottom: 138px;
+    }
+
+    .projectSuccessful {
+        margin-bottom: 113px;
+    }
+
+    .fundedIconWrapper {
+        position: relative;
+
+        img + div {
+            position: absolute;
+            top: 75px;
+            text-align: center;
+            width: 150px;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+    }
+
+
+    .img-pledge{
+        width:45px !important;
+        height:45px !important;
+    }
+}
+
+.popover.projectPagePopOver {
+    text-align: center;
+    min-width: 300px;
+    max-width: 450px;
+}
+
+.progressBarTooltip .tooltip-inner {
+    border-radius: 5px;
+    font-size: 1.2em;
+    padding: 5px 15px;
+}
+
+
+.registerShortContainer {
+    background-color: #fff;
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 100% !important;
+    box-sizing: border-box;
+    border-radius: 15px;
+    overflow: hidden;
+    font-family: 'MuseoSans500';
+}
+
+.registerShortContainer h5 {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    font-weight: normal;
+    font-size: 1.25em;
+    font-family: 'MuseoSans500';
+}
+
+.registerShortContainer input.form-control {
+    padding: 15px;
+    background-color: #f0f0f0;
+    width: 100%;
+    outline: 0;
+    border: 1px solid #f0f0f0;
+    color: #414042;
+    font-size: 1.2em;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 52px;
+    border-radius: 10px;
+    box-shadow: inset 0 0px 0px;
+}
+
+.registerShortContainer input.form-control::selection, .registerShortContainer input.form-control:focus {
+    border: 2px solid #bbb;
+    background-color: white;
+}
+
+
+.registerShortContainer input.btn {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: rgb(74,210,255);
+    margin: 5px;
+    outline: none;
+    font-size: 1.5em;
+    border: 2px solid;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.registerShortContainer input.btn:hover {
+    background-color: white;
+    border: 2px solid rgb(74,210,255);
+    color: black;
+}
+
+.shareIcons {
+    width: 100%;
+    text-align: right;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.shareIcons .share_bubble {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    font-size: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #d0d5cb;
+    background-color: #fff;
+    color: #75796f;
+    font-weight: normal;
+    margin: 0 0 0 5px;
+    padding: 2px 5px;
+    position: relative;
+}
+
+.shareIcons .share_bubble .triangle {
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid #d0d5cb;
+    position: absolute;
+    left: -5px;
+    top: 4px;
+}
+
+.shareIcons .share_bubble .triangle.white {
+    border-right-color: #fff;
+    left: -3px;
+}
+
+@media (min-width: @screen-md-min) {
+    .sh-projectPages {
+        .mejs-container.projectPage {
+            height: 435px !important;
+        }
+
+        .video-wrapper .mejs-container {
+            height: 260px !important;
+        }
+    }
+}
+
+@media (min-width: @screen-md-min) and (max-width: @screen-lg-min) {
+    .sh-projectPages {
+        .video-wrapper .mejs-container {
+            height: 211px !important;
+        }
+
+        .projectCollectingFunds .infoMessage {
+            margin-bottom: 113px;
+        }
+
+        .projectUnsuccessful .infoMessage {
+            margin-bottom: 203px;
+        }
+    }
+}
+
+@media (min-width:@screen-xs-max) and (max-width : @screen-sm-max) {
+    .sh-projectPages {
+        .projectImageSection {
+            margin-top: 50px;
+        }
+
+        .mejs-container.projectPage {
+            height: 322px !important;
+        }
+
+        .projectUnsuccessful .infoMessage {
+            margin-bottom: 175px;
+        }
+
+        .projectCollectingFunds .infoMessage {
+            margin-bottom: 86px;
+        }
+
+        .projectSuccessful {
+            margin-bottom: 85px;
+        }
+
+        .video-wrapper .mejs-container {
+            height: 205px !important;
+        }
+
+        .projectIntro {
+            margin-top: 64px !important;
+        }
+
+
+    }
+}
+
+@media (min-width: @screen-xs-min) and (max-width: @screen-xs-max) {
+    .sh-projectPages {
+        .mejs-container.projectPage {
+            height: 260px !important;
+        }
+    }
+}
+
+@media (max-width: @screen-xs-max) {
+    .sh-projectPages {
+        .projectImageSection {
+            .mainProjectImage {
+                height: auto !important;
+                width: 100% !important;
+            }
+        }
+
+        .pledgeInfoSections .infoMessage,
+        .projectSuccessful {
+            margin-bottom: 0;
+        }
+
+        .fundedIconWrapper.visible-xs {
+            display: table !important;
+            margin: 0 auto;
+        }
+
+        .pledgeInfoSections {
+            padding-left: 0 !important;
+            text-align: left;
+
+            .pledgeSectionsWrapper,
+            .idea > div:first-child {
+                text-align: center;
+                border-top: 1px solid @table-border-color;
+                border-bottom: 1px solid @table-border-color;
+            }
+
+            .pledgeSectionsWrapper > div {
+                display: inline-block !important;
+                text-align: left;
+                padding: 12px;
+            }
+
+            .likesSection > div {
+                display: table-cell !important;
+                text-align: left;
+                padding: 14px;
+                vertical-align: middle;
+            }
+
+            .likesSection {
+                overflow: auto;
+                display: table;
+                margin: 0 auto;
+            }
+
+            .numeric {
+                margin-top: 0 !important;
+                font-size: 20px;
+                line-height: 20px;
+            }
+
+            .xl {
+                font-size: 14px;
+            }
+
+            .smallInfo {
+                text-align: center;
+            }
+        }
+
+        .likesWrapper {
+            min-height: initial;
+        }
+
+        .projectTitle {
+            h1 {
+                font-size: @font-size-base * 2;
+            }
+        }
+
+        #project-map-canvas {
+            height: 220px;
+        }
+
+        .location {
+            max-height: 296px;
+        }
+
+        .modal {
+            padding: 0 !important;
+        }
+
+        .modal-body {
+            max-height: calc(~"100vh - 56px");
+            overflow-y: auto;
+        }
+
+        .modal-dialog {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        .modal-content {
+            height: 100%;
+            border-radius: 0;
+        }
+
+        .readMoreInfo.collapsible-text .read-more {
+            line-height: 3;
+        }
+
+        #ppModal {
+            .row > div:first-child {
+                padding-left: 32px;
+            }
+
+            .row > div:last-child {
+                padding-right: 32px;
+            }
+
+            .readMoreInfo {
+                max-height: 220px;
+            }
+        }
+
+        #costs {
+            .row-group,
+            .row-group > .bubble {
+                display: block;
+            }
+        }
+
+
+        
+        .bubble-img.bubble-small {
+            height:30px !important;
+            width:30px !important;
+            .img-pledge{
+                width: 30px!important;
+                height: 30px!important;
+            }
+
+        }
+
+       
+    }
+
+     .margin-vertical-xs-1{
+             margin: @font-size-base*1 0px;
+        }
+}
+
+@media (max-width: @screen-xs) {
+    .sh-projectPages {
+        .mejs-container.projectPage {
+            height: 180px !important;
+        }
+    }
+}
+
+@media (min-width: @screen-md-max) {
+    .sh-projectPages {
+        .backersLikesWrapper {
+            .nav-tabs > li > a {
+                &:after {
+                    -webkit-transition: all 0.2s;
+                    -moz-transition: all 0.2s;
+                    -o-transition: all 0.2s;
+                    transition: all 0.2s;
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    bottom: -5px;
+                    width: 0;
+                    height: 3px;
+                    background-color: @brand-primary;
+                    content: "";
+                }
+
+                &:hover, &:focus {
+                    color: @brand-primary;
+                    border: none;
+                }
+
+                &:hover:after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

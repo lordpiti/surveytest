@@ -1,0 +1,316 @@
+﻿@import "_variables.less";
+@import "_mixins.less";
+
+.accountSettings {
+    h3 {
+        margin: 0;
+    }
+
+    .rightPanel {
+        padding: 20px;
+    }
+
+    hr {
+        border-top: 1px solid @gray-light;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .newsletterSubscribe + p {
+        padding-left: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 0;
+    }
+
+    .load-spinner {
+        position: relative;
+
+        .fa-cog {
+            color: white;
+        }
+    }
+
+    .table-sh-responsive {
+        td.content-left[data-title]:before {
+            float: left;
+        }
+    }
+
+    .push-img-up {
+        position: relative;
+        top: -17px;
+    }
+}
+
+.nav-pills.accountMenu > li {
+
+    &.active {
+
+        & > a {
+            font-weight: bold;
+        }
+    }
+
+    & > a {
+        background-color: white;
+        color: @gray-brand;
+
+        &:hover,
+        &:active {
+            background-color: @brand-primary;
+            color: white;
+        }
+    }
+}
+
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #000;
+}
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #000;
+}
+
+#projects-dashboard {
+    .load-spinner {
+        position: relative;
+
+        .fa-cog {
+            color: white;
+        }
+    }
+}
+
+.projects-table {
+
+    .arrow {
+        margin-left: 5px;
+        position: absolute;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    #backers {
+        position: relative;
+    }
+
+    #backers .arrow {
+        bottom: 12px;
+        right: -4px;
+    }
+
+    tr > td {
+        vertical-align: middle !important;
+    }
+
+    .project-info {
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .project-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+    }
+
+    .fa-camera {
+        line-height: 50px;
+    }
+
+    .like .fa {
+        border-radius: 50%;
+        padding: 3px;
+        margin-right: 5px;
+    }
+
+    .like .fa-gbp {
+        width: 20px;
+        padding-left: 6px;
+        font-size: small;
+    }
+
+    .follow {
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+}
+
+
+.orgGallery {
+
+    .thumbnail .img-wrapper {
+        height: 105px;
+    }
+
+    .mejs-overlay {
+        background-color: @brand-primary;
+    }
+
+    .mejs-container {
+        margin: 0 auto;
+    }
+}
+
+// top nav bar in my account area
+.accountTopNavBar {
+    .navbar {
+        min-height: 40px;
+    }
+
+    .navbar-static-top {
+        border-width: 0;
+    }
+
+    .navbar-left {
+        margin-left: -15px;
+    }
+
+
+    .nav-tabs {
+        border: none;
+
+        & > li {
+            margin-bottom: 0;
+
+            &.active > a,
+            &.active > a:hover {
+                background-color: inherit;
+            }
+        }
+    }
+
+    ul.nav > li {
+
+        &:hover,
+        &:focus {
+            text-shadow: 0 0 0 white;
+        }
+
+
+        &.active {
+            color: @brand-primary;
+            border: none;
+
+            &:after {
+                width: 100%;
+            }
+
+            > a {
+                text-shadow: 0 0 0 white;
+                color: white !important;
+                border: none;
+
+                &:after {
+                    .underline-navigation-line(@brand-primary, -6px);
+                }
+            }
+        }
+
+        & > a {
+            padding-top: 13px;
+            padding-bottom: 10px;
+            color: white;
+            border: none;
+
+            &:hover,
+            &:focus {
+                background-color: inherit;
+                border: none;
+                border-color: @gray-brand;
+            }
+        }
+    }
+}
+
+
+.org-projects {
+    
+    .nav-tabs,
+    .nav-tabs > li > a,
+    .nav-tabs > li.active > a,
+    .nav-tabs > li.active > a:hover,
+    .nav-tabs > li.active > a:focus,
+    .nav-tabs > li > a:hover,
+    .nav-tabs > li > a:focus {
+        border: none;
+        background-color: inherit;
+    }
+
+    .nav-tabs > li > a {
+        color: @brand-primary;
+    }
+
+    .nav-tabs > li > a:first-child {
+        padding-left: 0;
+    }
+
+    .nav-tabs > li.active > a {
+        font-weight: bold;
+    }
+
+    
+}
+
+.highlights {
+    p {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: @screen-xs-max) {
+    .accountSettings {
+        .saveBtn {
+            width: 100%;
+            margin-bottom: 14px;
+        }
+
+        .fa-camera {
+            line-height: normal;
+        }
+
+        .projects-table .project-info .project-image.project-default-image {
+            width: inherit;
+            height: inherit;
+        }
+
+        .table-sh-responsive {
+            td.no-proj-img[data-title]:before {
+                line-height: normal;
+            }
+
+            td.has-proj-img[data-title]:before {
+                line-height: 50px;
+            }
+        }
+    }
+}
+
+@media (max-width: @screen-md-min) {
+    .accountTopNavBar {
+        display: none;
+    }
+}
+
+@media (min-width: @screen-xs-min) and (max-width: @screen-xs-max) {
+    .panel-card{
+        .card-col-small {
+            width: 50%;
+        }
+    }
+}

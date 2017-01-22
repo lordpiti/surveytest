@@ -1,0 +1,87 @@
+﻿#map-controls {
+
+    .fa {
+        padding-left: 1px;
+    }
+
+    .fixed-position {
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        background-color:white;
+    }
+
+    .step0 {
+        width: 332px;
+        
+
+        input{
+            height:60px !important;
+        }
+    }
+
+    .step2 {
+        width: 250px;
+    }
+
+    p.bg-info {
+        display: inline;
+        background-color: white;
+        padding: 3px 7px 4px 7px;
+        border: solid #DBDBDB 1px;
+        margin-right: 1px;
+    }
+
+    .btn {
+        background-color: white;
+    }
+
+    .btn-default.active {
+        background-color: rgb(228, 228, 228);
+    }
+
+    .btn-danger {
+        color: #d9534f;
+    }
+    
+    &.hide-during-load {
+        display: none;
+    }
+
+    .panel-default>.panel-heading {
+        background-color: white;
+        padding: 4px 10px;
+    }
+
+    .panel-body {
+        padding: 8px;
+    }
+
+    #search {
+        width: 300px;
+    }
+    
+    .fadein.ng-enter {
+        -webkit-transition: opacity 0.3s linear 0.3s;
+        -moz-transition: opacity 0.3s linear 0.3s;
+        -o-transition: opacity 0.3s linear 0.3s;
+        transition: opacity 0.3s linear 0.3s;
+    }
+    
+    .fadein.ng-leave {
+        -webkit-transition: opacity 0.3s linear;
+        -moz-transition: opacity 0.3s linear;
+        -o-transition: opacity 0.3s linear;
+        transition: opacity 0.3s linear;
+    }
+
+    .fadein.ng-enter,
+    .fadein.ng-leave.ng-leave-active {
+        opacity: 0;
+    }
+
+    .fadein.ng-leave,
+    .fadein.ng-enter.ng-enter-active {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,112 @@
+// Core variables and mixins
+@import "_variables.less";
+
+//
+// Linkboxes
+// --------------------------------------------------
+
+.sh-linkboxes {
+
+    /*&.row {
+        margin-left: -6px;
+        margin-right: -6px;
+    }
+
+    &> .col-sm-5,
+    &> .col-sm-7 {
+        padding-left: 6px;
+        padding-right: 6px;
+    }*/
+
+    .linkbox {
+        color: @white;
+        margin-bottom: 12px;
+        position: relative;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+
+        .img-wrapper {
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+
+            &> img {
+                bottom: 0;
+                max-height: 200%;
+                min-height: 100%;
+                min-width: 100%;
+                position: absolute;
+                right: 0;
+            }
+        }
+
+        .linkbox-info-wrapper {
+            background-color: rgba(0, 0, 0, 0.1);
+            bottom: 0;
+            display: table;
+            height: 100%;
+            overflow: hidden;
+            padding: 0 40px;
+            position: absolute;
+            width: 100%;
+            -webkit-transition: all 400ms ease-in-out;
+            -moz-transition: all 400ms ease-in-out;
+            -o-transition: all 400ms ease-in-out;
+            transition: all 400ms ease-in-out;
+
+            /*&:before {
+                content: '';
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+                margin-right: -0.25em; // Adjusts for spacing
+            }*/
+
+            .linkbox-info {
+                //display: inline-block;
+                display: table-cell;
+                vertical-align: middle;
+                width: 100%;
+
+                h3 {
+                    line-height: 1em;
+                }
+
+                .linkbox-intro {
+                    max-height: 0;
+                    overflow: hidden;
+                    -webkit-transition: all 600ms ease-in-out;
+                    -moz-transition: all 600ms ease-in-out;
+                    -o-transition: all 600ms ease-in-out;
+                    transition: all 600ms ease-in-out;
+                }
+            }
+        }
+            
+        a:hover,
+        a:active,
+        a:focus {
+
+            .linkbox-info-wrapper {
+                background-color: rgba(0, 0, 0, 0.5);
+
+                strong {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .linkbox-md {
+        height: 320px;
+
+        a:hover,
+        a:active,
+        a:focus {
+                
+            .linkbox-intro {
+                max-height: 320px !important;
+            }
+        }
+    }
+}
+

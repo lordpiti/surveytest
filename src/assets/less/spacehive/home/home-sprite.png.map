@@ -1,0 +1,81 @@
+{
+  "images": [
+    {
+      "name": "/Content/images/logo-lrg-scaled.png",
+      "width": 150,
+      "height": 51,
+      "offsetX": 1,
+      "offsetY": 1
+    },
+    {
+      "name": "/Content/images/stickers/funded.png",
+      "width": 80,
+      "height": 84,
+      "offsetX": 1,
+      "offsetY": 53
+    },
+    {
+      "name": "/Content/images/hive-symbol/rotated-lime-hive-symbol.png",
+      "width": 240,
+      "height": 212,
+      "offsetX": 1,
+      "offsetY": 138
+    },
+    {
+      "name": "/Content/images/press-logos-scaled/bbc-news.png",
+      "width": 67,
+      "height": 50,
+      "offsetX": 1,
+      "offsetY": 351
+    },
+    {
+      "name": "/Content/images/press-logos-scaled/fast-company.png",
+      "width": 120,
+      "height": 18,
+      "offsetX": 1,
+      "offsetY": 402
+    },
+    {
+      "name": "/Content/images/press-logos-scaled/good.png",
+      "width": 93,
+      "height": 50,
+      "offsetX": 1,
+      "offsetY": 421
+    },
+    {
+      "name": "/Content/images/press-logos-scaled/independent.png",
+      "width": 50,
+      "height": 50,
+      "offsetX": 1,
+      "offsetY": 472
+    },
+    {
+      "name": "/Content/images/press-logos-scaled/new-scientist.png",
+      "width": 120,
+      "height": 17,
+      "offsetX": 1,
+      "offsetY": 523
+    },
+    {
+      "name": "/Content/images/press-logos-scaled/property-week.png",
+      "width": 116,
+      "height": 50,
+      "offsetX": 1,
+      "offsetY": 541
+    },
+    {
+      "name": "/Content/images/press-logos-scaled/sky-news.png",
+      "width": 120,
+      "height": 30,
+      "offsetX": 1,
+      "offsetY": 592
+    },
+    {
+      "name": "/Content/images/press-logos-scaled/the-economist.png",
+      "width": 98,
+      "height": 50,
+      "offsetX": 1,
+      "offsetY": 623
+    }
+  ]
+}

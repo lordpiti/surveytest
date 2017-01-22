@@ -1,0 +1,255 @@
+// Core variables and mixins
+@import "_variables.less";
+
+//
+// Jumbo-media
+// --------------------------------------------------
+
+.jumbo-media {
+    background-color: @gray-dark;
+    background-position: center bottom;
+    background-size: cover;
+    height: 550px;
+    overflow: hidden;
+    position: relative;
+    /*background-color: @gray-dark;
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 30%;
+    position: relative;
+    width: 100%;*/
+    &.mini-jumbo {
+        height: 350px;
+        padding-bottom: 0;
+    }
+
+    .media-object {
+        bottom: 0;
+        position: absolute;
+        width: 100%;
+
+        img {
+            height: auto !important;
+            width: 100% !important;
+        }
+
+        &.imgTop {
+            top: 0;
+        }
+
+        .media-credit {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: @border-radius-base 0 0;
+            bottom: 0;
+            color: white;
+            cursor: pointer;
+            display: block;
+            padding: 0.5em 1em;
+            position: absolute;
+            right: 0;
+            vertical-align: middle;
+            z-index: 10;
+
+            & + .tooltip {
+
+                .tooltip-inner {
+                    text-align: left;
+                }
+            }
+        }
+    }
+    /*video.media-object {
+        display: block;
+        height: auto;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform:    translate(-50%, -50%);
+        -ms-transform:     translate(-50%, -50%);
+        -o-transform:      translate(-50%, -50%);
+        transform:         translate(-50%, -50%);
+        width: 100%;
+        z-index: 1;
+    }*/
+    .motto-wrapper {
+        display: table;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+        /*&:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+            margin-right: -0.25em; // Adjusts for spacing
+        }*/
+        &.bg-clearblack {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .motto {
+            //display: inline-block;
+            display: table-cell;
+            vertical-align: middle;
+            width: 100%;
+
+            .hive-symbol {
+                position: relative;
+
+                &:before {
+                    background-image: url("../../../../images/hive-symbol/red-hive-symbol.png");
+                    height: 212px;
+                    pointer-events: none;
+                    position: absolute;
+                    right: -77px;
+                    top: -150px;
+                    width: 240px;
+                    z-index: -2;
+                }
+            }
+
+            h1 {
+                //color: @white;
+                font-size: 80px;
+                text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+            }
+
+            h1.large {
+                font-size: 60px;
+                text-shadow: inherit;
+            }
+        }
+    }
+
+    .jumbo-bar {
+        background-color: rgba(0,173,239,0.5);
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        z-index: 2;
+
+        .col-sm-2.text-center {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        label {
+            font-family: @font-family-serif;
+            font-size: @font-size-h3;
+            font-weight: normal;
+            color: @white;
+            //margin-right: 1em;
+        }
+    }
+}
+
+// Specific fallback background images
+
+#home_hero {
+    //background-image: url('/Content/images/home/parkandslide1.jpg');
+}
+
+@media (max-width: @screen-md-max) {
+    .jumbo-media {
+        height: 400px;
+        /*padding-bottom: 40%;*/
+        &.mini-jumbo {
+            height: 300px;
+        }
+
+        .motto-wrapper {
+
+            .motto {
+
+                h1 {
+                    font-size: 70px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: @screen-sm-max) {
+    .jumbo-media {
+        height: 350px;
+
+        &.mini-jumbo {
+            height: 250px;
+        }
+
+        .motto-wrapper {
+
+            .motto {
+                //padding-bottom: 3em;
+                h1, h1.large {
+                    font-size: 50px;
+                }
+            }
+        }
+
+        .jumbo-bar {
+
+            label {
+                font-size: @font-size-h4;
+                margin-top: 3px;
+            }
+        }
+    }
+
+    /*.jumbo-search {
+        background-color: transparent !important;
+    }*/
+}
+
+@media (max-width: @screen-xs-max) {
+    .jumbo-media {
+        height: 250px;
+
+        &.mini-jumbo {
+            height: 180px;
+        }
+
+        .motto-wrapper {
+
+            .motto {
+                //padding-bottom: 0;
+                h1 {
+                    font-size: 40px;
+                }
+
+                h1.large {
+                    font-size: 27px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: @screen-xs) {
+    .jumbo-media {
+        height: 180px;
+
+        &.mini-jumbo {
+            height: 120px;
+        }
+
+        .motto-wrapper {
+
+            .motto {
+
+                h1 {
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: @screen-md-max) and (max-width: 1367px) {
+    .jumbo-media {
+        height: 400px;
+    }
+}

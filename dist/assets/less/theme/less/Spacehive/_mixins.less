@@ -1,0 +1,180 @@
+﻿@import "_variables.less";
+
+.transition-mixin() {
+    -moz-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+    -webkit-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+}
+
+.scale-mixin() {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.blockquote-separator(@color,@bordercolor) {
+    font-size: inherit;
+    border-left: 5px solid @bordercolor !important;
+    color: @color;
+    padding: 10px 20px !important;
+}
+
+.transition(@property, @timing, @function) {
+    -moz-transition: @property @timing @function;
+    -o-transition: @property @timing @function;
+    -webkit-transition: @property @timing @function;
+    transition: @property @timing @function;
+}
+
+.collapsible-text-mixin(@height) {
+    .collapsible-text {
+        max-height: @height;
+        overflow: hidden;
+        position: relative;
+        padding-bottom: 1.5em;
+        -webkit-transition: max-height 1s;
+        -moz-transition: max-height 1s;
+        -o-transition: max-height 1s;
+        transition: max-height 1s;
+        .collapsed-mixin();
+    }
+}
+
+.collapsed-mixin() {
+    &.collapsed {
+        max-height: 5000px !important;
+
+        .read-more {
+            a {
+                &:after {
+                    content: "- Less";
+                }
+            }
+        }
+    }
+}
+
+.read-more-mixin(@fromColour: rgba(255,255,255, 0.1), @toColour: #fff) {
+    display: block;
+    background: @toColour;
+    background: -moz-linear-gradient(top, @fromColour 0, @toColour 30%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0, @fromColour),color-stop(30%, @toColour));
+    background: -webkit-linear-gradient(top, @fromColour 0, @toColour 30%);
+    background: -o-linear-gradient(top,@fromColour 0, @toColour 30%);
+    background: -ms-linear-gradient(top, @fromColour 0, @toColour 30%);
+    background: linear-gradient(to bottom,@fromColour 0, @toColour 30%);
+    bottom: 0;
+    height: 2.5em;
+    line-height: 2.5em;
+    position: absolute;
+    text-align: left;
+    width: 100%;
+    font-weight: bold;
+    padding-top: 0.4em;
+
+    a {
+        &:after {
+            content: "+ More";
+        }
+    }
+}
+
+.category-mixin(@hoverColor, @selectedColor, @borderColor, @backgroundColor,@borderwide) {
+    .category {
+        display: table;
+        width: 100%;
+        border: @borderwide solid @borderColor;
+        height: 62px;
+        text-align: center;
+        .transition(background, 0.2s, linear);
+        background-color: @backgroundColor;
+
+        & > label {
+            display: table-cell;
+            vertical-align: middle;
+            padding: 0 5px;
+            font-weight: normal;
+            cursor: pointer;
+
+            .labelText + span {
+                display: none;
+            }
+        }
+
+        &:hover {
+            & > label {
+                .transition(background, 0.5s, linear);
+                background-color: @hoverColor;
+
+                .labelText {
+                    display: none;
+
+                    & + span {
+                        display: inline-block;
+                        font-weight: normal;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+
+        &.selected {
+            background-color: @selectedColor !important;
+            border-color: @selectedColor;
+            color: white;
+        }
+
+        &.disabled {
+            background-color: whitesmoke;
+
+            label {
+                cursor: not-allowed;
+            }
+        }
+    }
+}
+
+
+.underline-navigation-line(@colour, @bottompx) {
+    display: block;
+    position: relative;
+    float: left;
+    left: 0;
+    bottom: @bottompx;
+    width: 100%;
+    height: 4px;
+    background-color: @colour;
+    content: "";
+}
+
+.random-number(@min, @max) {
+    @random-number: floor( `Math.round(Math.random() * (@{max} - @{min}) + @{min})` );
+}
+
+.loop-particles (@i) when (@i > 0) {
+    .light-particle-@{i} {
+        .random-number(0, 100);
+        top: @random-number * 1%;
+    }
+
+    .light-particle-@{i} {
+        .random-number(0, 100);
+        left: @random-number * 1%;
+    }
+
+    .light-particle-@{i} {
+        .random-number(4, 15);
+        animation-duration: @random-number * 1s;
+    }
+
+    .light-particle-@{i} {
+        .random-number(8, 20);
+        width: @random-number * 1px;
+        height: @random-number * 1px;
+    }
+
+    .loop-particles(@i - 1);
+}

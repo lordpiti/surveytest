@@ -1,0 +1,58 @@
+﻿// Core variables and mixins
+@import "_variables.less";
+@import "_mixins.less";
+
+
+.img-preview-wrapper {
+    display: table;
+
+    .img-overlay {
+        display: none;
+    }
+
+    .user-preview-image {
+        background-color: white;
+        position: relative;
+        cursor: pointer;
+
+        height: 100px;
+        width: 100px;
+
+        &:hover .img-overlay {
+            display: table;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .avatarUploadCircle {
+        z-index: 100;
+        height: 100%;
+    }
+}
+
+
+.cropImageModal {
+
+    .cropPreview {
+        width: 180px;
+    }
+
+
+    .img-container {
+        min-height: 342px;
+        max-height: 350px;
+    }
+
+
+    .user-preview-image {
+        background-color: #f7f7f7;
+        text-align: center;
+        overflow: hidden;
+        width: 180px;
+        height: 180px;
+    }
+}

@@ -1,0 +1,374 @@
+﻿// Core variables and mixins
+@import "_variables.less";
+@import "_mixins.less";
+
+.sh-projectAdmin {
+
+    .sh-alert-success {
+        background-color: @brand-success-transparent;
+    }
+
+    .projectAdminSidebar {
+
+        a {
+            color: @gray-base;
+        }
+
+        &.nav > li > a {
+            cursor: pointer;
+        }
+
+        &.nav > li.active > a,
+        &.nav > li > a:focus,
+        &.nav > li.active > a:focus,
+        &.nav > li.active > a:hover,
+        &.nav > li:not(.disabled) > a:hover {
+            background-color: @brand-primary;
+            color: white;
+        }
+
+        &.nav > li.disabled > a:hover {
+            background-color: @table-bg-accent;
+        }
+
+        &.nav-pills > li.sectionItem > a {
+            padding-left: 30px !important;
+        }
+
+        &.nav-pills > .disabled > a,
+        &.nav-pills > .disabled > a:hover,
+        &.nav-pills > .disabled > a:focus {
+            color: @gray-light;
+        }
+
+        &.nav-pills > li.section a {
+            padding-left: 15px;
+        }
+    }
+
+    .category-mixin(@brand-primary-transparent, @brand-primary, @input-border, @table-bg-hover,1px);
+
+    .thumbnail .img-wrapper {
+        height: 105px;
+    }
+
+    .rightPanel .mejs-overlay {
+        background-color: @brand-primary;
+    }
+
+    .rightPanel .thumbnail-image .mejs-overlay {
+        background-color: transparent !important;
+    }
+
+    .rightPanel .sideMargin {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+
+    .mejs-container {
+        margin: 0 auto;
+    }
+
+    .separator {
+        .blockquote-separator(@gray-darker,@brand-primary-transparent);
+        margin: 0 0 20px !important;
+    }
+
+    textarea.text-area-sm {
+        min-height: 115px;
+    }
+
+
+    .contact {
+        max-width: 250px;
+    }
+
+    .input-small {
+        width: 50px;
+    }
+
+    .date {
+        max-width: 250px;
+    }
+
+    h3 {
+        margin: 0;
+    }
+
+    .rightPanel {
+        padding: 30px 20px;
+    }
+
+    .load-spinner {
+        position: relative;
+
+        .fa-cog {
+            color: white;
+        }
+    }
+
+    .select2-container .select2-choice {
+        min-height: 33px !important;
+    }
+
+    .alert {
+        border: none !important;
+    }
+
+    .alert-info {
+        color: @gray-base;
+        border: none !important;
+    }
+
+    .control-label span {
+        font-weight: normal;
+    }
+
+
+    .ui-select-match {
+
+        .caret {
+            margin-top: 7px;
+        }
+    }
+
+    .btn-publish {
+        width: 250px;
+    }
+
+    #font-awesomeIcon {
+        font-size: 45px;
+        width: 74px;
+        height: 74px;
+        border-radius: 50%;
+        line-height: 74px;
+        text-align: center;
+    }
+
+    #font-awesomeIcon .big {
+        width: 100px;
+        height: 100px;
+    }
+
+    .no-border,
+    .modal-header.no-border {
+        border: none;
+        padding-bottom: 0;
+    }
+
+    .projectAdmin-Costs {
+
+        .cost-table {
+            .cost-row {
+                background: #EEEEEE;
+            }
+
+            .cost-row:not(:last-child) {
+                border-bottom: 1px solid #C0C0C0;
+            }
+        }
+    }
+
+
+    .paymentOption {
+        margin-left: 20px;
+    }
+
+    #pdmInvite,
+    #addContractor {
+        .modal-dialog {
+            max-width: 488px;
+        }
+    }
+
+    #contractors {
+        table-layout: fixed;
+
+        th {
+            padding: 10px;
+        }
+
+        tbody td {
+            padding: 10px;
+        }
+
+        tbody td:last-of-type {
+            vertical-align: middle;
+        }
+    }
+
+    blockquote .alert-info {
+        margin-top: 38px;
+    }
+
+    .deleteIcon {
+        .fa-remove {
+            position: relative;
+            top: -15px;
+            right: -12px;
+
+            &:hover {
+                color: @brand-danger;
+                cursor: pointer;
+            }
+        }
+    }
+
+    #verificationModal .modal-lg {
+        max-width: 621px;
+    }
+
+    #fundraisingModal .modal-dialog {
+        max-width: 703px;
+    }
+
+
+    #grantMatchModal {
+        .img-circle {
+            width: 75px;
+            display: inline-block;
+            height: 75px;
+        }
+
+        .other-grants-bubble {
+            vertical-align: middle;
+            line-height: 70px;
+            background-color: #88c100;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+
+
+    .color-danger {
+        color: @brand-danger;
+    }
+
+    .numeric-question {
+        max-width: 185px;
+    }
+
+    #otherQuestions .checkbox {
+        margin-top: 0;
+    }
+
+    .hurrayBox {
+        padding: 20px;
+    }
+
+    .grantSummary {
+        .panel-group .panel {
+            border-right: none;
+            border-left: none;
+            border-radius: 0;
+
+            & + .panel {
+                margin-top: 0;
+                border-top: none;
+            }
+        }
+
+        .collapsible-text-mixin(140px);
+
+        .read-more {
+            .read-more-mixin();
+        }
+    }
+
+    .verifier {
+        .collapsible-text-mixin(140px);
+
+        .read-more {
+            .read-more-mixin();
+        }
+
+        .checkedSection .read-more {
+            background: -webkit-linear-gradient(top, rgba(255,255,255,.1) 0, #EDF6D9 30%);
+            background: linear-gradient(to bottom,rgba(255,255,255,.1) 0, #EDF6D9 30%);
+        }
+    }
+
+    .gmOffers {
+        .iconCell {
+            width: 105px;
+        }
+    }
+
+    .paddingright19-5{
+        padding-right:19.5% !important;
+    }
+    .width80-5{
+        width:80.5%;
+    }
+
+    .pledgesGrantMakers{
+        h3,h4{
+            font-family: RobotoRegular;
+        }
+    }
+
+    .termsAndConditionsBox {
+        max-height:300px;
+        overflow-y:auto;
+    }
+
+    .moneybag:hover{
+        animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+        -ms-transform: translate(0px,0px); /* IE 9 */
+        -webkit-transform: translate(0px, 0px); /* Safari */
+        transform: translate(0px, 0px);
+    }
+    .cell{
+        .pledge-additionalinfo{
+            position:absolute;
+        }
+    }
+}
+
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate(0px, -1px);
+  }
+  
+  20%, 80% {
+    transform: translate(0px, 4px);
+  }
+
+  30%, 50%, 70% {
+    transform: translate(0px,-6px);
+  }
+
+  40%, 60% {
+    transform: translate(0px, 6px);
+  }
+}
+
+
+@media (max-width: @screen-xs-max) {
+    .sh-projectAdmin {
+        .inline-block-xs {
+            display: inline-block;
+            width: 100%;
+            margin-top: 14px;
+        }
+
+        .pledgesGrantMakers{
+            .image-div{
+                float:left;
+            }
+            .bubble-img{
+                height:50px;
+                width:50px;
+                .img-circle{
+                    height:50px;
+                    width:50px;
+                }
+            }
+            .width80-5{
+                width:100%;
+            }
+        }
+    }
+}

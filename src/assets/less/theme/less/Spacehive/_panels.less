@@ -1,0 +1,79 @@
+// Core variables and mixins
+@import "_variables.less";
+
+//
+// Panels
+// --------------------------------------------------
+
+.panel {
+    box-shadow: none !important;
+
+    &.funded {
+
+        .img-wrapper {
+            position: relative;
+
+            &:after {
+                bottom: 0.25em;
+                content: "";
+                position: absolute;
+                right: 0.5em;
+            }
+        }
+    }
+
+    .img-wrapper {
+        height: 220px;
+        overflow: hidden;
+
+        &> img {
+            display: block;
+            //height: auto;
+            //min-height: 100%;
+            height: inherit;
+            min-height: inherit;
+            width: 100%;
+        }
+    }
+}
+
+.panel-md {
+    height: 20em;
+    overflow: hidden;
+    position: relative;
+}
+
+
+@media (max-width: @screen-md-max) {
+    .panel {
+
+        .img-wrapper {
+            height: 180px;
+        }
+    }
+}
+
+@media (max-width: @screen-sm-max) {
+    .panel {
+
+        .img-wrapper {
+            height: 220px;
+        }
+    }
+}
+
+@media (max-width: @screen-xs-max) {
+    .panel {
+
+        .img-wrapper {
+            height: auto;
+        }
+    }
+    .panel-md {
+        height: auto;
+
+        &:after {
+            height: 0;
+        }
+    }
+}

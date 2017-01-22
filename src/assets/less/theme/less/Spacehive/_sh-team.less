@@ -1,0 +1,44 @@
+// Core variables and mixins
+@import "_variables.less";
+
+//
+// Team
+// --------------------------------------------------
+
+.sh-team {
+
+    .team-member {
+        margin-bottom: 30px;
+
+        a {
+            text-decoration: none;
+
+            figure {
+                position: relative;
+
+                img {
+                    width: 100%;
+                }
+
+                figcaption {
+                    background-color: rgba(0,0,0,0.6);
+                    bottom: 0;
+                    color: @white;
+                    overflow: hidden;
+                    padding: 0.2em 0.6em;
+                    position: absolute;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.staff-bio {
+
+    h3 {
+        margin-bottom: 0;
+    }
+}

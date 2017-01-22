@@ -1,0 +1,130 @@
+﻿@import "_variables.less";
+@import "_mixins.less";
+
+.sh-volunteers {
+    .list-group-item {
+        padding: 0 !important;
+    }
+
+    .opportunity-item,
+    .panel-title {
+        line-height: 40px;
+    }
+
+    .list-group-item:last-child {
+        border-bottom: none
+    }
+}
+
+.createVolunteers {
+
+    .ng-valid {
+        &.form-control {
+            border: 1px solid #ccc;
+            box-shadow: none;
+            .form-control-focus();
+        }
+    }
+
+    .no-padding-left {
+        padding-left: 0
+    }
+
+    .postCode {
+        width: 100px;
+    }
+
+    h4 + hr {
+        margin-top: 0;
+    }
+
+    .dateSelection {
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 5px;
+        border: 1px solid rgb(199, 199, 199);
+
+        input[type="checkbox"] {
+            position: absolute;
+            left: -9999px;
+            opacity: 0;
+            z-index: -9999;
+        }
+
+        input[type=checkbox] + label {
+            display: inline-block;
+            cursor: pointer;
+            background-color: white;
+            border-radius: 21px;
+            width: 21px;
+            height: 21px;
+            line-height: 21px;
+        }
+
+        .fa-check {
+            color: @gray-lighter;
+        }
+
+        input[type=checkbox]:checked + label {
+            background-color: @btn-primary-color;
+        }
+
+        input[type=checkbox]:checked + label .fa-check {
+            color: black;
+        }
+
+        .col-sm-1 {
+            width: 10%;
+
+            &.bold {
+                line-height: 27px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width : 1025px) {
+    .createVolunteers {
+        .dateSelection {
+            input[type=checkbox] + label:hover {
+                background-color: @btn-primary-color;
+                .transition(background-color, 1s, ease-out);
+            }
+
+            input[type=checkbox] + label:hover .fa-check {
+                color: black;
+                .transition(color, 1s, ease-out);
+            }
+        }
+    }
+}
+
+@media (max-width : 1024px) {
+    .createVolunteers {
+        .dateSelection {
+            input[type=checkbox] + label:hover,
+            input[type=checkbox] + label:hover .fa-check {
+                 -webkit-transition: none !important;
+                  -moz-transition: none !important;
+                  -o-transition: none !important;
+                  transition: none !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 765px) {
+    .createVolunteers {
+        .dateSelection {
+            .daysOfWeek {
+                margin-top: @font-size-base*2 !important;
+            }
+            .col-sm-1 {
+                width: auto;
+            }           
+        }
+        .timeSlots {
+                padding: 0;
+         }
+    }
+}

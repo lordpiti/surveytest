@@ -1,0 +1,86 @@
+﻿/*
+@import this file directly into your existing Less files to use these mixins
+*/
+.navbar .navbar-brand {
+  /* You may have to set 'display: block' */
+  width: 150px;
+  height: 51px;
+  background: url('home-sprite.png') -1px -1px;
+}
+.panel.funded .img-wrapper:after {
+  /* You may have to set 'display: block' */
+  width: 80px;
+  height: 84px;
+  background: url('home-sprite.png') -1px -53px;
+}
+.sh-hives.hive-symbol:before {
+  /* You may have to set 'display: block' */
+  width: 240px;
+  height: 212px;
+  background: url('home-sprite.png') -1px -138px;
+}
+.logos-bbc-news {
+  /* You may have to set 'display: block' */
+  width: 67px;
+  height: 50px;
+  background: url('home-sprite.png') -1px -351px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.logos-fast-company {
+  /* You may have to set 'display: block' */
+  width: 120px;
+  height: 18px;
+  background: url('home-sprite.png') -1px -402px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.logos-good {
+  /* You may have to set 'display: block' */
+  width: 93px;
+  height: 50px;
+  background: url('home-sprite.png') -1px -421px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.logos-independent {
+  /* You may have to set 'display: block' */
+  width: 50px;
+  height: 50px;
+  background: url('home-sprite.png') -1px -472px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.logos-new-scientist {
+  /* You may have to set 'display: block' */
+  width: 120px;
+  height: 17px;
+  background: url('home-sprite.png') -1px -523px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.logos-property-week {
+  /* You may have to set 'display: block' */
+  width: 116px;
+  height: 50px;
+  background: url('home-sprite.png') -1px -541px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.logos-sky-news {
+  /* You may have to set 'display: block' */
+  width: 120px;
+  height: 30px;
+  background: url('home-sprite.png') -1px -592px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.logos-the-economist {
+  /* You may have to set 'display: block' */
+  width: 98px;
+  height: 50px;
+  background: url('home-sprite.png') -1px -623px;
+  display: inline-block;
+  vertical-align: middle;
+}
+/*# sourceMappingURL=home-sprite.css.map */

@@ -1,0 +1,180 @@
+// Core variables and mixins
+@import "_variables.less";
+
+//
+// Custom nav pills
+// --------------------------------------------------
+
+.nav-pills {
+
+    > li {
+
+        // Links rendered as pills
+        > a {
+            background-color: lighten(@gray-base, 97.5%);
+        }
+
+        // Active state
+        &.active > a {
+            &,
+            &:hover,
+            &:focus {
+                color: @nav-pills-active-link-hover-color;
+                background-color: @nav-pills-active-link-hover-bg;
+            }
+        }
+    }
+
+    &.border-right {
+        & > li {
+            & > a {
+                border-radius: @border-radius-base 0 0 @border-radius-base;
+            }
+        }
+    }
+
+    &.nav-stacked {
+        &.border-left,
+        &.border-right {
+            &.border-primary {
+                padding-top: @font-size-base/2 + @font-size-base/4 + 0.5; // 11px
+                padding-bottom: @font-size-base/2 + @font-size-base/4 + 0.5; // 11px
+                position: relative;
+            }
+        }
+    }
+
+    &.chevrons-bar {
+        & > li {
+            &:first-child > a {
+                padding-left: 15px;
+
+                &:before {
+                    content: none !important;
+                }
+            }
+
+            &:last-child > a {
+                padding-right: 15px;
+
+                &:after {
+                    content: none !important;
+                }
+            }
+
+            &.active {
+                & > a {
+                    &:after {
+                        border-color: transparent transparent transparent @brand-primary;
+                    }
+
+                    &:hover {
+                        &:after {
+                            border-color: transparent transparent transparent @brand-primary;
+                        }
+                    }
+
+                    &:focus {
+                        &:after {
+                            border-color: transparent transparent transparent @brand-primary;
+                        }
+                    }
+                }
+            }
+
+            & > a {
+                border-radius: 0;
+                padding: 10px 10px 10px 20px;
+
+                &:before {
+                    border-bottom: 20px solid transparent;
+                    border-left: 10px solid #ffffff;
+                    border-top: 20px solid transparent;
+                    content: "";
+                    height: 0;
+                    left: 0;
+                    margin: -10px 0 0;
+                    position: absolute;
+                    width: 0;
+                }
+
+                &:after {
+                    border-bottom: 20px solid transparent;
+                    border-left: 10px solid transparent;
+                    border-top: 20px solid transparent;
+                    content: "";
+                    height: 0;
+                    margin: -10px 0 0 10px;
+                    position: absolute;
+                    width: 0;
+                    z-index: 1;
+                }
+
+                &:hover {
+                    &:after {
+                        border-color: transparent transparent transparent @gray-lighter;
+                    }
+                }
+
+                &:focus {
+                    border-color: transparent transparent transparent @gray-lighter;
+                }
+            }
+        }
+    }
+
+    &#tabsLevel2 {
+
+        &> li {
+
+            &> a {
+
+                &.status-success {
+                    padding-right: 2em;
+                    position: relative;
+
+                    &> .fa-check {
+                        bottom: 35%;
+                        position: absolute;
+                        right: 0.5em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+//
+// Side line stuff
+// --------------------------------------------------
+
+.nav-pills.nav-stacked.border-left.border-primary:before,
+.nav-pills.nav-stacked.border-left.border-primary:after {
+    background-color: @brand-primary;
+    border-radius: 50%;
+    content: "";
+    height: @font-size-base/2; // 7px
+    position: absolute;
+    width: @font-size-base/2; // 7px
+    left: -@font-size-base/4 - 0.5; // -4px
+}
+
+.nav-pills.nav-stacked.border-right.border-primary:before,
+.nav-pills.nav-stacked.border-right.border-primary:after {
+    right: -@font-size-base/4 - 0.5; // -4px
+}
+
+.nav-pills.nav-stacked.border-left.border-primary:before,
+.nav-pills.nav-stacked.border-right.border-primary:before {
+    top: 0;
+}
+
+.nav-pills.nav-stacked.border-left.border-primary:after,
+.nav-pills.nav-stacked.border-right.border-primary:after {
+    bottom: 0;
+}
+
+.nav-pills.nav-stacked.border-left.border-primary > li > a {
+    border-radius: 0 @border-radius-base @border-radius-base 0;
+}

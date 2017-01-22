@@ -1,0 +1,172 @@
+// Core variables and mixins
+@import "_variables.less";
+
+//
+// Buttons
+// --------------------------------------------------
+
+.btn-inherit-primary {
+    color: inherit;
+    background-color: transparent;
+    border-color: inherit !important;
+}
+
+.btn:active, .btn.active {
+
+    &:active,
+    &.active {
+        box-shadow: none;
+    }
+}
+
+.btn-default {
+
+    &:hover,
+    &:focus,
+    &.focus {
+        background-color: @gray-brand !important;
+        border-color: @gray-brand !important;
+        color: @white !important;
+    }
+
+    &:active,
+    &.active {
+        background-color: @gray-dark !important;
+        border-color: @gray-dark !important;
+        color: @white !important;
+    }
+}
+
+.btn {
+    &.btn-purple {
+        background-color: @purple-dark;
+        color: @white !important;
+
+        &:hover,
+        &:focus,
+        &.focus {
+            background-color: darken(@purple-dark, 5%) !important;
+            border-color: darken(@purple-dark, 5%) !important;
+            color: @white !important;
+        }
+    }
+
+
+    &.btn-darkGrey {
+        background-color: @gray-brand;
+        color: @white !important;
+
+        &:hover,
+        &:focus,
+        &.focus {
+            background-color: darken(@gray-brand, 5%) !important;
+            border-color: darken(@gray-brand, 5%) !important;
+            color: @white !important;
+        }
+    }
+}
+
+.btn-big {
+    width: 150px;
+}
+
+
+.btn-primary,
+.btn-inherit-primary {
+
+    &:hover,
+    &:focus,
+    &.focus,
+    &.marked {
+        background-color: @brand-primary !important;
+        border-color: @brand-primary !important;
+        color: @white !important;
+    }
+
+    &:active,
+    &.active {
+        /*background-color: darken(@brand-primary, 5%) !important;
+        border-color: darken(@brand-primary, 5%) !important;*/
+        background-color: #404042 !important;
+        border-color: #404042 !important;
+        color: @white !important;
+    }
+
+    &.marked {
+        &:hover,
+        &:focus,
+        &.focus {
+            /*background-color: darken(@brand-primary, 5%) !important;*/
+            background-color: #404042 !important;
+            /*border-color: darken(@brand-primary, 5%) !important;*/
+            border-color: #404042 !important;
+            color: @white !important;
+        }
+    }
+}
+
+.btn-joined-leave {
+
+    &:before {
+        content: "Joined";
+    }
+
+    &:hover {
+        background-color: darken(@btn-danger-bg, 10%) !important;
+        border-color: darken(@btn-danger-bg, 12%) !important;
+
+        &:before {
+            content: "Leave";
+        }
+    }
+}
+
+.btn-pending {
+    &:before {
+        content: "Pending";
+    }
+}
+
+.btn-yellow {
+    background-color: @brand-secondary;
+    color: @gray-dark;
+}
+
+.btn-yellow:hover {
+    color: @gray-dark;
+    background-color: darken(@brand-secondary, 5%);
+}
+
+.publishBtn {
+    min-width: 126px;
+}
+
+.btn {
+    &.btn-facebook {
+        background: #3b5998;
+        border-radius: 0;
+        color: #fff;
+        width: 100%;
+        font-weight: bold;
+        height: 40px;
+        font-size: 15px;
+    }
+
+    &.btn-facebook:link,
+    &.btn-facebook:visited {
+        color: #fff;
+    }
+
+    &.btn-facebook:active,
+    &.btn-facebook:hover {
+        background: #30477a;
+        color: #fff;
+    }
+
+    &.btn-wide {
+        width: 100%;
+        font-weight: bold;
+        height: 40px;
+        line-height: 1.7;
+    }
+}

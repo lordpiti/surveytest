@@ -1,0 +1,32 @@
+// Core variables and mixins
+@import "_variables.less";
+
+//
+// Wizard
+// --------------------------------------------------
+
+.wizard-step {
+
+    .nav-pills.pull-right {
+        display: none;
+    }
+
+    form {
+
+        .text-right {
+
+            .btn {
+                display: none;
+            }
+        }
+    }
+}
+
+.body-height.wizard {
+    .page-wrap {
+       margin-bottom: -128px;
+    }
+    footer, .page-wrap:after {
+      height: 128px !important; 
+    }
+}

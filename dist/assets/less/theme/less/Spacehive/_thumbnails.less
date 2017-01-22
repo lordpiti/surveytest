@@ -1,0 +1,35 @@
+// Core variables and mixins
+@import "_variables.less";
+
+//
+// Thumbnails
+// --------------------------------------------------
+
+.thumbnail {
+    .img-wrapper {
+        background-color: @gray-light;
+        //height: 105px;
+        height: auto;
+        margin-bottom: 4px;
+        overflow: hidden;
+        text-align: center;
+
+        &> img {
+            box-shadow: 0 0 2px -1px #000, 0 0 2px -1px #000;
+            //display: block;
+            display: inline-block;
+            //height: auto;
+            height: 100%;
+            max-width: 100%;
+            //width: 100%;
+        }
+    }
+}
+
+@media (min-width: @screen-sm) {
+    .thumbnail {
+        .img-wrapper {
+            height: 105px;
+        }
+    }
+}

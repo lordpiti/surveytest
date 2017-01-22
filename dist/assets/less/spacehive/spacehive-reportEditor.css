@@ -1,0 +1,67 @@
+﻿
+#cms-tabs {
+	margin: 1em;
+}
+
+.form-group p {
+	color: #666666;
+	font-size: 9pt;
+	line-height: 1.25em;
+	padding-left: 0.5em;
+	border-color: #cccccc;
+	border-width: 2px;
+	border-left-style: solid;
+}
+
+.project-switch {
+	margin-top: 1.25em;
+	font-size: 14pt;
+	font-weight: 400;
+}
+
+.cms-project {
+	border-color: #cccccc;
+	border-width: 2px;
+	border-top-style: dashed;
+	padding-bottom: 1em;
+}
+
+.cms-report {
+	border-color: #cccccc;
+	border-width: 2px;
+	border-top-style: dashed;
+	padding-bottom: 1em;
+}
+
+.popover {
+	max-width: 500px!important;
+	min-width: 350px!important;
+}
+
+.popover ul {
+	padding-left: 0px;
+}
+
+#main-content {
+    background-color: #ffffff;
+}
+
+@media (max-width: 767px) {
+	.form-group p {
+		margin-top: 1em;
+		margin-left: 2em;
+		margin-bottom: 0em;
+	}
+
+	.btn-block {
+		margin-top: 1em;
+	}
+
+	.well {
+		margin: 1em;
+	}
+
+	.project-switch {
+		
+	}
+}

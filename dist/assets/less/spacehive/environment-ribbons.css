@@ -1,0 +1,65 @@
+﻿.env-ribbon {
+  position: fixed;
+  cursor: default;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  z-index: 999999;
+  box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.65);
+}
+.env-ribbon > span {
+  color: #fff;
+  display: block;
+  font: bold 8pt 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 1px 0;
+  padding: 2px 4px;
+  text-decoration: none;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.65);
+}
+.env-ribbon.good {
+  background-color: #006600;
+}
+.env-ribbon.good > span {
+  border: 1px dashed #ccffcc;
+}
+.env-ribbon.bad {
+  background-color: #aa0000;
+}
+.env-ribbon.bad > span {
+  border: 1px dashed #ffffff;
+}
+.env-ribbon.a {
+  left: -30px;
+  top: 37px;
+  width: 152px;
+}
+.env-ribbon.a > span {
+  text-align: center;
+}
+.env-ribbon.b {
+  left: -20px;
+  top: 94px;
+  width: 76px;
+}
+.env-ribbon.b > span {
+  text-align: right;
+}
+.env-ribbon.c {
+  left: 38px;
+  top: 49px;
+  width: 51px;
+}
+.env-ribbon.c > span {
+  text-align: center;
+}
+.env-ribbon.d {
+  left: 70px;
+  top: 3px;
+  width: 80px;
+}
+.env-ribbon.d > span {
+  text-align: left;
+}
+/*# sourceMappingURL=environment-ribbons.css.map */

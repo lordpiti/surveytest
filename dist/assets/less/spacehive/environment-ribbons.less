@@ -1,0 +1,77 @@
+﻿@good-colour: #060;
+@bad-colour: #a00;
+@shadow-colour: rgba(0, 0, 0, 0.65);
+
+.env-ribbon {
+
+    position: fixed;
+    cursor: default;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    z-index: 999999;
+    box-shadow: 2px 3px 6px @shadow-colour;
+
+    > span {
+        color: #fff;
+        display: block;
+        font: bold 8pt 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        margin: 1px 0;
+        padding: 2px 4px;
+        text-decoration: none;
+        text-shadow: 0 0 2px @shadow-colour;
+    }
+
+    &.good {
+        background-color: @good-colour;
+        > span {
+            border: 1px dashed lighten(@good-colour, 70%);
+        }
+    }
+
+    &.bad {
+        background-color: @bad-colour;
+        > span {
+            border: 1px dashed lighten(@bad-colour, 70%);
+        }
+    }
+    
+    &.a {
+        left: -30px;
+        top: 37px;
+        width: 152px;
+        > span {
+            text-align: center;
+        }
+    }
+    
+    &.b {
+        left: -20px;
+        top: 94px;
+        width: 76px;
+        > span {
+            text-align: right;
+        }
+    }
+    
+    &.c {
+        left: 38px;
+        top: 49px;
+        width: 51px;
+        > span {
+            text-align: center;
+        }
+    }
+        
+    &.d {
+        left: 70px;
+        top: 3px;
+        width: 80px;
+        > span {
+            text-align: left;
+        }
+    }
+
+}

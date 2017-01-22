@@ -1,0 +1,69 @@
+﻿/*
+@import this file directly into your existing Scss files to use these mixins
+*/
+@mixin sprite-Content-images-logo-lrg-scaled() {
+/* You may have to set 'display: block' */
+	width: 150px;
+	height: 51px;
+	background: url('home-sprite.png') -1px -1px;
+}
+@mixin sprite-Content-images-stickers-funded() {
+/* You may have to set 'display: block' */
+	width: 80px;
+	height: 84px;
+	background: url('home-sprite.png') -1px -53px;
+}
+@mixin sprite-Content-images-hive-symbol-rotated-lime-hive-symbol() {
+/* You may have to set 'display: block' */
+	width: 240px;
+	height: 212px;
+	background: url('home-sprite.png') -1px -138px;
+}
+@mixin sprite-Content-images-press-logos-scaled-bbc-news() {
+/* You may have to set 'display: block' */
+	width: 67px;
+	height: 50px;
+	background: url('home-sprite.png') -1px -351px;
+}
+@mixin sprite-Content-images-press-logos-scaled-fast-company() {
+/* You may have to set 'display: block' */
+	width: 120px;
+	height: 18px;
+	background: url('home-sprite.png') -1px -402px;
+}
+@mixin sprite-Content-images-press-logos-scaled-good() {
+/* You may have to set 'display: block' */
+	width: 93px;
+	height: 50px;
+	background: url('home-sprite.png') -1px -421px;
+}
+@mixin sprite-Content-images-press-logos-scaled-independent() {
+/* You may have to set 'display: block' */
+	width: 50px;
+	height: 50px;
+	background: url('home-sprite.png') -1px -472px;
+}
+@mixin sprite-Content-images-press-logos-scaled-new-scientist() {
+/* You may have to set 'display: block' */
+	width: 120px;
+	height: 17px;
+	background: url('home-sprite.png') -1px -523px;
+}
+@mixin sprite-Content-images-press-logos-scaled-property-week() {
+/* You may have to set 'display: block' */
+	width: 116px;
+	height: 50px;
+	background: url('home-sprite.png') -1px -541px;
+}
+@mixin sprite-Content-images-press-logos-scaled-sky-news() {
+/* You may have to set 'display: block' */
+	width: 120px;
+	height: 30px;
+	background: url('home-sprite.png') -1px -592px;
+}
+@mixin sprite-Content-images-press-logos-scaled-the-economist() {
+/* You may have to set 'display: block' */
+	width: 98px;
+	height: 50px;
+	background: url('home-sprite.png') -1px -623px;
+}

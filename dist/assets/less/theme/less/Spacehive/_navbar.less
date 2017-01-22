@@ -1,0 +1,69 @@
+// Core variables and mixins
+@import "_variables.less";
+
+//
+// Navbars
+// --------------------------------------------------
+.modal-open .navbar {
+  padding-right: 17px;
+}
+
+.navbar {
+    .navbar-brand {
+        margin-top: 9px;
+        height: 51px;
+        text-indent: -9999px;
+        width: 150px;
+    }
+
+    .navbar-toggle {
+        background-color: @gray-brand;
+    }
+}
+
+#navbar {
+    font-family: @font-family-serif;
+    font-size: 18px;
+    max-height: 480px;
+
+    /*button {
+        border: 0;
+    }*/
+
+    form {
+        font-family: @font-family-sans-serif;
+
+        button {
+            background-color: transparent;
+
+            &:hover {
+                color: @brand-primary;
+            }
+        }
+    }
+
+    .dropdown-menu {
+        font-family: @font-family-sans-serif;
+    }
+
+    #myaccount_dropdown {
+        width: 100%;
+    }
+
+    #discover_dropdown {
+        min-width: 126px;
+    }
+
+    #sign_out {
+        min-width: 112px;
+    }
+
+    #partner_dropdown {
+        min-width: 113px;
+    }
+
+    #about_dropdown {
+        min-width: 99px;
+    }
+}
+

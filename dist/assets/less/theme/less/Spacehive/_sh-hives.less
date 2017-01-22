@@ -1,0 +1,1232 @@
+// Core variables and mixins
+@import "_variables.less";
+@import "_mixins.less";
+//
+// Hives
+// --------------------------------------------------
+
+.sh-hives {
+
+    &.hive-symbol {
+        position: relative;
+
+        &:before {
+            left: -50px;
+            pointer-events: none;
+            position: absolute;
+            top: -177px;
+            z-index: 1;
+        }
+    }
+
+    &.row {
+        margin-left: -6px;
+        margin-right: -6px;
+    }
+
+    & > .col-sm-5,
+    & > .col-sm-7 {
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    .hive {
+        color: @white;
+        margin-bottom: 12px;
+        overflow: hidden;
+        position: relative;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+
+        .img-wrapper {
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+
+            & > img {
+                max-height: 200%;
+                min-height: 100%;
+                min-width: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+
+        .hive-info-wrapper {
+            background-color: rgba(0, 0, 0, 0.4);
+            bottom: 0;
+            display: table;
+            height: 100%;
+            overflow: hidden;
+            padding: 0 40px;
+            position: absolute;
+            width: 100%;
+            -webkit-transition: all 400ms ease-in-out;
+            -moz-transition: all 400ms ease-in-out;
+            -o-transition: all 400ms ease-in-out;
+            transition: all 400ms ease-in-out;
+            -webkit-box-shadow: inset 0 0 4px 0 rgba(0,0,0,0.2);
+            -moz-box-shadow: inset 0 0 4px 0 rgba(0,0,0,0.2);
+            box-shadow: inset 0 0 4px 0 rgba(0,0,0,0.2);
+            /*&:before {
+                content: '';
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+                margin-right: -0.25em; // Adjusts for spacing
+            }*/
+            .hive-info {
+                //background-color: rgba(0, 0, 0, 0.4);
+                //display: inline-block;
+                display: table-cell;
+                //padding: 0 40px;
+                vertical-align: middle;
+                width: 100%;
+
+                h3 {
+                    line-height: 1em;
+                }
+
+                .hive-intro {
+                    max-height: 0;
+                    overflow: hidden;
+                    -webkit-transition: all 600ms ease-in-out;
+                    -moz-transition: all 600ms ease-in-out;
+                    -o-transition: all 600ms ease-in-out;
+                    transition: all 600ms ease-in-out;
+                }
+            }
+        }
+
+        .hive-info-wrapper.cyan {
+            background-color: rgba(24, 171, 227, 0.5);
+        }
+
+        .hive-info-wrapper.yellow {
+            background-color: rgba(241, 186, 43, 0.5);
+        }
+
+        .hive-info-wrapper.red {
+            background-color: rgba(239, 77, 95, 0.5);
+        }
+
+        .hive-info-wrapper.purple {
+            background-color: rgba(143, 30, 110, 0.5);
+        }
+
+        .hive-info-wrapper.lime {
+            background-color: rgba(129, 195, 65, 0.5);
+        }
+
+        a:hover,
+        a:active,
+        a:focus {
+
+            .hive-info-wrapper {
+                background-color: rgba(123, 0, 70, 0.5);
+                -webkit-box-shadow: inset 0 0 4px 0 rgba(0,0,0,0.6);
+                -moz-box-shadow: inset 0 0 4px 0 rgba(0,0,0,0.6);
+                box-shadow: inset 0 0 4px 0 rgba(0,0,0,0.6);
+
+                strong {
+                    text-decoration: underline;
+                }
+            }
+
+            .hive-info-wrapper.cyan {
+                background-color: rgba(24, 171, 227, 0.75);
+            }
+
+            .hive-info-wrapper.yellow {
+                background-color: rgba(241, 186, 43, 0.75);
+            }
+
+            .hive-info-wrapper.red {
+                background-color: rgba(239, 77, 95, 0.75);
+            }
+
+            .hive-info-wrapper.purple {
+                background-color: rgba(143, 30, 110, 0.75);
+            }
+
+            .hive-info-wrapper.lime {
+                background-color: rgba(129, 195, 65, 0.75);
+            }
+        }
+    }
+
+    .hive-lg {
+        height: 460px;
+
+        a:hover,
+        a:active,
+        a:focus {
+
+            .hive-info-wrapper {
+
+                .hive-intro {
+                    max-height: 460px !important;
+                }
+            }
+        }
+    }
+
+    .hive-md {
+        height: 224px;
+
+        a:hover,
+        a:active,
+        a:focus {
+
+            .hive-info-wrapper {
+
+                .hive-intro {
+                    max-height: 224px !important;
+                    /*max-height: 2.25em !important;
+                    overflow: visible;*/
+                }
+            }
+        }
+    }
+
+
+    .hivesSidebar {
+
+        .nav > li:not(.disabled) > a {
+            color: black;
+        }
+
+        & > .nav > li > a,
+        & > .nav > li > a:focus,
+        & > .nav > li > a:hover {
+            background-color: @table-bg-accent;
+            cursor: pointer;
+        }
+
+        & > .nav > li.active > a,
+        li.nested > ul > li.active > a {
+            font-weight: bold;
+        }
+
+        & > .nav > li.active > a,
+        & > .nav > li.active > a:focus,
+        & > .nav > li.active > a:hover,
+        & > .nav > li > a:focus,
+        & > .nav > li > a:hover {
+            background-color: @green13;
+            color: white;
+        }
+
+        & > .nav > li.nested > a {
+            padding-left: 8px;
+            font-weight: normal;
+        }
+
+        li.nested > ul > li > a {
+            background-color: @light-green;
+        }
+
+        .nested .nav-stacked > li + li {
+            margin: 0;
+            border-top: 2px solid white;
+        }
+
+        .active.nested > a:before {
+            content: "- ";
+        }
+
+        .nested > a:before {
+            content: "+ ";
+        }
+    }
+
+    .myhives {
+        .img-circle {
+            width: 46px;
+            height: 46px;
+            line-height: 46px;
+            text-align: center;
+            font-weight: bold;
+        }
+    }
+
+    .movement,
+    .movement + .panel-group {
+        max-width: 420px;
+    }
+
+    .movement {
+        position: relative;
+        height: 279px;
+
+        .img-wrapper {
+            height: initial;
+            position: relative;
+            overflow: hidden;
+
+            & > img {
+                display: block;
+                height: inherit;
+                min-height: inherit;
+                width: 100%;
+            }
+        }
+
+        .close-icon {
+            background-color: @brand-primary;
+            color: white;
+        }
+    }
+
+    .close-icon {
+        position: absolute;
+        top: -14px;
+        right: -14px;
+        padding: 4px 8px;
+        color: white;
+        border-radius: 50%;
+        border: 4px solid white;
+    }
+
+    .joined .movement {
+        height: 227px;
+    }
+
+    .hive-container {
+        display: block;
+        color: @gray-darker;
+
+        &.movement .content {
+            position: absolute;
+            bottom: 0;
+
+            img {
+                position: absolute;
+                border: 3px solid white;
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin-left: auto;
+                margin-right: auto;
+                top: -74px;
+            }
+        }
+
+        .invited {
+            min-height: 165px;
+
+            .invButtons {
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+                margin-top: 10px;
+            }
+        }
+
+        .content {
+            background-color: @gray-lighter;
+
+            &.joinedHive {
+                min-height: 111px;
+            }
+        }
+
+        &:hover .content {
+            background-color: #e1f6fa;
+        }
+    }
+
+    .manage {
+        a {
+            color: @gray-darker;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+
+    .joined {
+        .panel-default > .panel-heading {
+            background-color: @gray-brand;
+
+            a.collapsed:before {
+                content: '+ ';
+            }
+
+            a:before {
+                content: '- ';
+            }
+
+            a {
+                color: white;
+            }
+        }
+
+        .panel-collapse {
+            position: absolute;
+            width: 100%;
+            z-index: 999;
+        }
+    }
+
+    .fade-txt:after {
+        content: "";
+        text-align: right;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 17.2em;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 80%);
+    }
+
+
+    .aboutMyHive {
+        .panel {
+            border-top-color: white;
+            border-right: none;
+            border-left: none;
+
+            .panel-heading {
+                background-color: white;
+
+                h4 a {
+                    color: @gray-darker !important;
+                }
+
+                a:before {
+                    content: '-';
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    background-color: @green13;
+                    padding: 0px 10px;
+                    color: white;
+                }
+
+                &:not(.collapsed) a:before {
+                    margin-left: 2px;
+                    margin-right: 3px;
+                }
+
+                &.collapsed {
+                    background-color: @green13;
+
+                    h4 a {
+                        color: white !important;
+                    }
+
+                    a:before {
+                        content: '+ ';
+                        background-color: initial;
+                    }
+                }
+
+                & + .panel-collapse > .panel-body {
+                    border: none;
+                }
+            }
+
+            &.disabled {
+                border-top-color: @table-border-color;
+                border-right: none;
+                border-left: none;
+
+                a:before {
+                    color: @table-border-color !important;
+                }
+
+                .panel-heading {
+                    background-color: white;
+
+                    h4 a {
+                        color: @table-border-color !important;
+                        cursor: not-allowed;
+                    }
+                }
+            }
+
+            &.disabled:last-of-type {
+                border-bottom-color: @table-border-color;
+            }
+        }
+
+        .panel-group .panel + .panel {
+            margin-top: 0;
+        }
+    }
+
+    .hiveDesc {
+        .input-group-addon,
+        .close-icon {
+            background-color: @green13;
+            color: white;
+        }
+
+        .cke_editable img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    .dashboard .hurray {
+        img {
+            position: absolute;
+            top: -32px;
+        }
+
+        img:first-of-type {
+            left: 50px;
+        }
+
+        img:last-of-type {
+            right: 50px;
+        }
+    }
+
+
+    .cropper {
+        width: 190px;
+        height: 190px;
+        border: 2px dotted @green13;
+        border-radius: 50%;
+        position: relative;
+        margin: 0px auto;
+
+        img.org-logo {
+            height: 185px;
+            border-radius: 50%;
+            margin: 0px auto;
+        }
+    }
+
+    .dropzone:hover i {
+        color: white;
+    }
+
+
+    .location-buttons {
+        .category-mixin(@purple2-transparent, @purple2, @purple2, @white,2px);
+    }
+
+    .categories-button {
+        .category-mixin(@light-green, @green13, @green13, @white,2px);
+    }
+
+    .impact-areas {
+        .category-mixin(@brand-primary-transparent, @brand-primary, @brand-primary, @white,2px);
+    }
+
+
+    .rightPanel {
+        padding: 30px 20px;
+    }
+
+    .panel-card {
+        .fa-star, .fa-star-o {
+            font-size: 20px;
+            vertical-align: top;
+        }
+
+        .panel {
+            height: 275px;
+
+            .sectionIcon {
+                width:50px;
+            }
+
+            &.funded .img-wrapper:after {
+                z-index: 100;
+            }
+
+            .panel-footer {
+                background-color: white;
+                border: none;
+
+                &:before {
+                    top: -10px;
+                    height: 20px;
+                }
+                &.bg-blue {
+                    text-align:center;
+                    background-color:cornflowerblue;
+                    font-weight:bold;
+                    color:white;
+                    &:before {
+                        top: 0;
+                        height: 0;
+                    }
+                }
+            }
+
+            .overlay-wrap {
+                .transition(background-color, 0.6s, ease);
+                background-color: transparent;
+
+                &.visible-overlay {
+                    z-index: 200;
+                    background-color: @purple2-transparent;
+
+                    .overlay {
+                        .transition(opacity, 0.6s, ease)
+                    }
+                }
+            }
+        }
+    }
+
+    .supporters {
+        .close-icon {
+            top: 2px;
+            right: 0px;
+            z-index: 300;
+        }
+    }
+
+
+    .hiveSocial {
+        .box {
+            background-color: @gray-light2;
+            padding: @font-size-base;
+            margin-top: @font-size-base;
+            float: left;
+
+            .icon {
+                width: 30px;
+                height: 30px;
+                background-color: white;
+                border-radius: 50%;
+                text-align: center;
+                padding-top: 5px;
+                position: absolute;
+            }
+
+            .text {
+                float: left;
+                margin-top: 5px;
+                margin-left: 40px;
+            }
+        }
+
+        .btn-wider {
+            width: 225px;
+        }
+    }
+
+    .collapsible-text-mixin(300px);
+
+    .read-more {
+        .read-more-mixin();
+    }
+    /**override bootstrap-timepicker*/
+
+}
+.bootstrap-timepicker-widget.dropdown-menu.open{
+    z-index:9999 !important;
+}
+.showpublish-movement {
+    position: absolute;
+    right: 15px;
+    bottom: 0px;
+}
+
+.sh-hives.hive-project-match-modal {
+
+    .sh-carousel {
+        height: 350px;
+        position: relative;
+
+        .sh-carousel-next {
+            position: absolute;
+            top: 125px;
+            right: 0px;
+            cursor: pointer;
+
+            &:hover {
+                color: @green13;
+            }
+        }
+
+        .sh-carousel-prev {
+            position: absolute;
+            top: 125px;
+            left: 0px;
+            cursor: pointer;
+
+            &:hover {
+                color: @green13;
+            }
+        }
+
+        .slides {
+            max-height: 350px;
+            overflow-y: hidden;
+
+            .slide-info {
+                text-shadow: none !important;
+            }
+
+            .panel-card {
+                float: left;
+            }
+        }
+    }
+
+    .btn-wider {
+        width: 225px;
+    }
+}
+
+.sh-carousel-spinner {
+    height: 600px;
+}
+
+.hivesImgDialog {
+    & > table > tbody > tr:last-child .cke_dialog_ui_hbox > td:first-child {
+        display: none;
+    }
+}
+
+
+.overlay-publishmovement {
+    height: 0px;
+    top: 65px;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    z-index: 100;
+    background-color: @gray-brand;
+    opacity: 0;
+}
+
+.transition-overlay {
+    -webkit-transition: all 150ms ease;
+    -moz-transition: all 150ms ease;
+    -ms-transition: all 150ms ease;
+    -o-transition: all 150ms ease;
+    transition: all 150ms ease;
+}
+
+.transition-overlay {
+    height: 60px;
+    opacity: 1;
+}
+
+.previewMovement {
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+
+    .fa-search {
+        font-size: 1.4em;
+        padding: 5.5px 7px;
+    }
+}
+
+.sh-movements {
+
+    h1, h2, h3 {
+        font-family: Arvo,serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .movement-brand-colour {
+        height: 13px;
+    }
+
+    .movement-nav {
+
+        .movement-brand-image-wrapper {
+            width: 163px;
+            height: 64px;
+        }
+
+        img {
+            position: relative;
+            top: -19px;
+        }
+
+        .navbar-nav {
+            display: inline-block;
+            float: none;
+            vertical-align: top;
+        }
+
+        .navbar-nav > li > a {
+            color: @gray-light;
+            font-weight: bold;
+        }
+
+        .navbar-nav > li.active > a {
+            color: @gray-darker;
+        }
+
+        li:last-of-type > button {
+            padding: 11px 0;
+            width: 75px;
+
+            .fa {
+                font-size: 21px;
+            }
+        }
+
+
+        .nav > li > a:focus, .nav > li > a:hover {
+            background-color: transparent;
+        }
+
+        ul.nav > li.active > a:after {
+            .underline-navigation-line(@brand-primary, -18px);
+        }
+    }
+
+    .margin-nav {
+        margin-right: 64px;
+    }
+
+    .marginNavNoSupporters {
+        margin-left: 32px;
+    }
+
+    .movement-section-title {
+        font-size: 35px;
+    }
+
+    .fav-project {
+        position: relative;
+        overflow: hidden;
+        max-width: 328px;
+    }
+
+    .btn-lg {
+        min-width: 210px;
+        padding: 14px;
+    }
+
+    .areas {
+        p {
+            padding-bottom: 20px;
+        }
+    }
+
+    .orgBio {
+        a, a:hover {
+            color: white;
+        }
+    }
+
+    .collapsible-text-mixin(180px);
+
+    .read-more {
+        .read-more-mixin(rgba(64, 64, 66, 0.1), @gray-brand);
+    }
+
+    .modal-update-header {
+        background-color: @gray-light2;
+        height: 30px;
+
+        .close {
+            height: 100%;
+            width: 30px;
+            background: @gray-darker;
+            color: white;
+            opacity: 1 !important;
+            float: left;
+        }
+    }
+
+    .joinconversation {
+        .btn-primary:hover {
+        }
+
+        #tweetbox {
+            font-size: @font-size-large;
+        }
+
+        .media-button {
+            line-height: 2;
+
+            &:hover {
+                background-color: #0081b2 !important;
+                border-color: #0081b2 !important;
+            }
+        }
+
+        #tweetButton {
+            color: @brand-primary;
+            position: relative;
+
+            .text {
+                position: relative;
+                left: 45px;
+            }
+
+            .addthis_inline_share_toolbox {
+                position: absolute !important;
+                width: 100% !important;
+                height: 100% !important;
+                top: 12px;
+                z-index: 40;
+            }
+
+            .at-icon-wrapper.at-share-btn.at-svc-twitter {
+                background-color: transparent !important;
+                width: 100% !important;
+
+                svg {
+                    fill: @brand-primary !important;
+                }
+            }
+
+            .at-icon-wrapper.at-share-btn.at-svc-pinterest_share,
+            .at-icon-wrapper.at-share-btn.at-svc-facebook,
+            .at-icon-wrapper.at-share-btn.at-svc-compact,
+            .at_flat_counter {
+                display: none;
+            }
+        }
+
+        .tw-timeline {
+            max-height: 585px;
+            overflow: auto;
+        }
+    }
+
+    .joinconversation-hider {
+        height: 45px;
+        width: 90px;
+        border-radius: 90px 90px 0 0;
+        -moz-border-radius: 90px 90px 0 0;
+        -webkit-border-radius: 90px 90px 0 0;
+        background: @brand-primary;
+        margin: 0px auto;
+        text-align: center;
+        padding-top: 10px;
+        color: white;
+        cursor: pointer;
+
+        .fa-plus + div {
+            line-height: 0.3;
+        }
+    }
+
+    .updates {
+
+        #wrapper {
+            margin: 5px auto 35px;
+        }
+
+        #list {
+            width: 100%;
+            margin-bottom: -1.875em;
+
+        }
+
+        .item {
+            margin: 10px 10px 30px 10px;
+            width: 340px;
+
+            .panel {
+                margin-bottom: 0px;
+                width: 340px;
+                 &:hover{
+                    background-color:#E6FAF5;
+                }
+                height: auto;
+            }
+
+            a {
+                color: black;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+           
+             .btn-wider {
+                width: 180px;
+            }
+             .panel-heading {
+            .circle-picture {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: #ebe800;
+                margin-right: 15px;
+                float: left;
+                position: relative;
+                top: -5px;
+            }
+
+            .text {
+                font-size: 16px;
+                display: inline-block;
+                max-width: 100%;
+            }
+        }
+        .panel-heading.news-panel-header{
+            border-color:transparent;
+            background-color:transparent;
+
+            .text-date{
+                width: 100%;
+                position: absolute;
+                top: 20px;
+                left: 0px;
+                text-align:center;
+            }
+        }
+
+        }
+
+        
+    }
+
+    .movement-accordion {
+
+        .ckContent img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+
+        .panel > .panel-heading {
+            a:before {
+                position: absolute;
+                right: 10px;
+                color: @brand-primary;
+                content: '-';
+                left: -20px;
+            }
+
+            &.collapsed {
+                a:before {
+                    content: '+';
+                }
+            }
+        }
+    }
+
+    .bg-movement-cover {
+        height: 339px;
+        width: 100%;
+        background-size: cover;
+        overflow: hidden;
+    }
+
+    .movement-category {
+        & > span {
+            padding: 7px;
+            margin: 7px 3px;
+        }
+    }
+
+    #createCarousel {
+        .slides img {
+            max-height: 274px;
+        }
+
+        .number-container .numberList {
+            .number {
+                background: @gray-light3;
+                color: @gray-dark2;
+            }
+
+            .number.active {
+                background: @white;
+                color: @gray-darker;
+            }
+        }
+    }
+
+    .supportersCount {
+        div {
+            width: 150px;
+            height: 150px;
+        }
+    }
+
+    .addthis-share {
+        padding: 18px 6px 0;
+    }
+
+    .supporter-slides {
+        .slick-track {
+            margin: auto;
+        }
+
+        .slick-next {
+            right: 27px;
+        }
+
+        .slick-prev {
+            left: 10px;
+            z-index: 10;
+        }
+
+        .slick-prev:before, .slick-next:before {
+            color: black;
+            opacity: 1;
+            font-size: 36px;
+        }
+
+        .slick-slide {
+            margin-left: 10px;
+            margin-right: 10px;
+            max-width: 320px;
+        }
+    }
+
+    .addthisContainer {
+        a .at-icon-wrapper,
+        svg:not(:root) {
+            width: 16px !important;
+            height: 16px !important;
+        }
+
+        .at_flat_counter {
+            height: 20px !important;
+            line-height: 19px !important;
+        }
+    }
+}
+
+
+@media (max-width: @screen-sm-max) {
+    .sh-hives {
+        &.hive-symbol {
+
+            &:before {
+                z-index: -1;
+                opacity: 0.75;
+            }
+        }
+    }
+
+    .sh-movements {
+
+        .movement-nav {
+            white-space: nowrap;
+            overflow-y: hidden;
+            overflow-x: scroll;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            .navbar-nav {
+                margin: 0;
+
+                & > li {
+                    float: none;
+                    display: inline-block;
+                    margin-right: 3px;
+
+                    & > a {
+                        padding: 10px;
+                    }
+                }
+            }
+
+            ul.nav > li.active > a:after {
+                bottom: -11px;
+            }
+
+            li:last-of-type > button {
+                position: relative;
+                padding: 2px 0;
+            }
+        }
+
+
+        .updates {
+            #list {
+                -webkit-column-count: 2;
+                -webkit-column-gap: 1.275em; /* 30px */
+                -webkit-column-fill: auto;
+                -moz-column-count: 2;
+                column-count: 2;
+            }
+        }
+
+
+        .bg-movement-cover {
+            height: 220px;
+        }
+
+        .orgBio {
+            .img-circle {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        #map-canvas {
+            height: 400px;
+        }
+
+        .addthis-share {
+            padding: 0 10px;
+        }
+    }
+}
+
+@media (max-width: @screen-xs-max) {
+    .sh-hives {
+        .dashboard .hurray {
+            img {
+                top: -37px;
+            }
+
+            img:first-of-type {
+                left: 0;
+            }
+
+            img:last-of-type {
+                right: 0;
+            }
+        }
+
+        .panel-card .panel {
+            height: auto;
+
+            .panel-body {
+                min-height: 110px;
+            }
+        }
+    }
+
+    .sh-hives.hive-project-match-modal {
+
+        .btn-wider {
+            width: auto;
+        }
+    }
+
+
+    .sh-movements {
+        .updates {
+            #list {
+                -webkit-column-count: 1;
+                -webkit-column-fill: auto;
+                -moz-column-count: 1;
+                column-count: 1;
+            }
+        }
+
+        h1,
+        .movement-section-title {
+            font-size: 27px;
+        }
+
+        h2 {
+            font-size: 21px;
+        }
+    }
+}

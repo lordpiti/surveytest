@@ -1,0 +1,154 @@
+﻿// Core variables and mixins
+@import "_variables.less";
+@import "_mixins.less";
+
+.sh-grants {
+
+    .grantsSidebar {
+
+        &.nav > li > a,
+        &.nav > li > a:focus,
+        &.nav > li > a:hover {
+            background-color: @table-bg-accent;
+            color: black;
+            cursor: pointer;
+        }
+
+        &.nav > li.active > a,
+        &.nav > li.active > a:focus,
+        &.nav > li.active > a:hover {
+            background-color: @brand-success;
+            font-weight: normal;
+            color: white;
+        }
+    }
+
+    .category-mixin(@brand-success-transparent, @brand-success, @brand-success, @white,1px);
+
+    .selected {
+        background-color: @brand-success;
+        color: white;
+    }
+
+    .separator {
+        .blockquote-separator(@gray-darker,@brand-success-transparent);
+    }
+
+    textarea.text-area-sm {
+        min-height: 115px;
+    }
+
+
+    .contact {
+        max-width: 250px;
+    }
+
+    .grantQuestion {
+        margin-bottom: 30px;
+
+        .checkbox,
+        p {
+            margin: 0;
+        }
+
+        select.form-control,
+        .selectlist {
+            display: inline-block;
+            width: 50%;
+        }
+
+        .questionText {
+            color: whitesmoke;
+            font-weight: 700;
+            font-size: 15px;
+
+            textarea[disabled],
+            input[type="text"][disabled] {
+                opacity: .65;
+            }
+        }
+
+        .form-horizontal {
+            .form-group {
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    .btn-grant {
+        color: @brand-success;
+        background-color: white;
+    }
+
+    .btn-grant:hover {
+        background-color: whitesmoke;
+        color: @brand-success;
+    }
+
+    .input-small {
+        width: 50px;
+    }
+
+    .date {
+        max-width: 250px;
+    }
+
+    .projectLocation .form-group {
+        padding: 0;
+    }
+
+    .impactCategories {
+        max-width: 570px;
+    }
+    .no-border{ border:none !important;}
+
+    #pledgeNowBtn{
+            
+    font-size: 1em;
+    font-weight: bold;
+    
+    height: inherit;
+    }
+
+
+    .bubble-text-secondary{
+        .offline-pledge{
+            position:absolute;
+        }
+    }
+    .cell{
+        .rejected-pledge{
+            position:relative;
+            top:10px;
+        }
+    }
+    .termsAndConditionsBox {
+        max-height:300px;
+        overflow-y:auto;
+    }
+}
+
+@media (min-width: @screen-sm-min) {
+    .sh-grants {
+        .grantQuestion {
+            .form-horizontal .control-label:last-of-type {
+                padding-top: 0;
+            }
+        }
+    }
+}
+
+
+.wizardStepComplete {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    color:green;
+}
+
+.wizardStepIncomplete {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    color:red;
+}

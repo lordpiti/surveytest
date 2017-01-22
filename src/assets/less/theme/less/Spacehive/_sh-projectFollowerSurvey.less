@@ -1,0 +1,201 @@
+// Core variables and mixins
+@import "_variables.less";
+@import "_mixins.less";
+//
+// Project Follower Survey
+// --------------------------------------------------
+
+.sh-projectFollowerSurvey {
+	
+	.reasonPledging {
+		padding: 10px;
+	    margin: 7px;
+	    -moz-transition: background-color .6s ease;
+	    -o-transition: background-color .6s ease;
+	    -webkit-transition: background-color .6s ease;
+	    transition: background-color .6s ease;
+	    background-color: @white;
+	    display: inline-block;
+	    cursor: pointer;
+	    font-size: 16px;
+	    
+
+	    &.borderPurple {
+			border: 1px solid @purple2;
+	    }
+
+	    &.borderGreen {
+	    	border: 1px solid @green12;
+	    }
+	}
+
+	.selectedReason {
+	    background-color: @purple2;
+    	color: @white;
+    }
+
+    .selectedSupportOtherWay {
+	    background-color: @green12;
+    	color: @white;
+    }
+
+	.bootstrap-switch-container {
+		height: 32px;
+	}
+
+	textarea {
+   		resize: none;
+	}
+
+	video {
+		width:100%;
+		height:100%;
+	}
+
+	.sectionTitle {
+		padding-left: 30px;
+	}
+
+	.selectBarContainer {
+		position: relative;
+		height: 80px;
+
+		.selectBarLine {
+			background-color: @gray-lighter;
+			height: 6px;width: 100%;
+			position: absolute;
+			top:60px;
+		}
+
+		.selectBarBullet {
+			width:28px;
+			height:28px;
+			border-radius: 14px;
+			background-color: @gray-lighter;
+			position: absolute;
+			top:48px;
+
+			&.bullet0 {
+				left: -1px;		
+			}
+
+			&.bulletLast {
+				left: 96%;
+			}
+
+			&.bullet2of4 {
+				left: 33%;
+			}
+
+			&.bullet3of4 {
+				left: 65%;
+			}
+
+			&.bullet2of3 {
+				left: 47%;
+			}
+
+			.facePin {
+				top:-5px;
+				left: -5px; 
+				position:absolute;
+				width: 41px;
+				height: 57px;
+
+				&.sadFacePin {
+					background: url('/assets/images/area-map-pin-feelings-all.png') no-repeat 0 0;
+				}
+				&.normalFacePin {
+					background: url('/assets/images/area-map-pin-feelings-all.png') no-repeat -42px 0;
+				}
+				&.happyFacePin {
+					background: url('/assets/images/area-map-pin-feelings-all.png') no-repeat -85px 0;
+				}
+				&.veryHappyFacePin {
+					background: url('/assets/images/area-map-pin-feelings-all.png') no-repeat -127px 0;
+					left: -10px;
+				}
+			}
+
+			.faceCircle {
+				top:-4px;
+				left: -4px; 
+				position:absolute;
+				width: 41px;
+				height: 57px;
+
+				&.sadFaceCircle{
+					background: url('/assets/images/sad-face.png') no-repeat 0 0;
+				}
+				&.normalFaceCircle {
+					background: url('/assets/images/same-face.png') no-repeat 0 0;
+				}
+				&.happyFaceCircle {
+					background: url('/assets/images/veryhappy-face.png') no-repeat 0 0;
+					left: -8px;
+				}
+			}
+		}
+	}
+
+	.circleSelector {
+		height: 70px;
+		width: 70px;
+		border-radius: 50%;
+		border: 1px solid @orange-light;
+		position: relative;
+		cursor: pointer;
+		margin: 5px;
+
+		.contentText {
+			position: absolute;
+			text-align: center;
+			top: 50%; 
+			left: 50%; 
+			transform: translate(-50%, -50%);
+		}
+
+	}
+
+	.thankYouContainer {
+		position: relative;
+		min-height: 400px;
+		width: 100%;
+
+		.contentText {
+			position: absolute;
+			text-align: center;
+			top: 50%; 
+			left: 50%; 
+			transform: translate(-50%, -50%);
+			width: 55%
+		}
+	}
+
+	.organisationLogoCircle {
+		width: 120px; 
+		height: 120px; 
+		border-radius:50%;
+	}
+
+	.arrow_box {
+		position: relative;
+		background: yellow;
+		border-radius: 10px;
+		margin-bottom: 60px;
+	}
+	.arrow_box:after {
+		top: 100%;
+		left: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-color: rgba(255, 222, 8, 0);
+		border-top-color: yellow;
+		border-width: 30px;
+		margin-left: -30px;
+	}
+}

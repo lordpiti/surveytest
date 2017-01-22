@@ -1,0 +1,55 @@
+﻿.login-glow {
+
+    -webkit-animation-duration: 4s;
+    -moz-animation-duration: 4s;
+    -o-animation-duration: 4s;
+    animation-duration: 4s;
+
+    -webkit-animation-name: glow;
+    -moz-animation-name: glow;
+    -o-animation-name: glow;
+    animation-name: glow;
+
+    //-webkit-animation-direction: alternate;
+    // -moz-animation-direction: alternate;
+    // -o-animation-direction: alternate;
+    // animation-direction: alternate;
+    
+    //-webkit-animation-iteration-count: infinite;
+    // -moz-animation-iteration-count: infinite;
+    // -o-animation-iteration-count: infinite;
+    // animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes glow {
+    0% {
+        text-shadow: 0 0 40px #d5de00;
+        color: rgba(51, 51, 51, 0.50);
+    }
+    100% { 
+        text-shadow: 0 0 0 rgba(255, 255, 255, 0.00); 
+        color: #333;
+    }
+}
+
+@-moz-keyframes glow {
+    0% {
+        text-shadow: 0 0 40px #d5de00;
+        color: rgba(51, 51, 51, 0.50);
+    }
+    100% { 
+        text-shadow: 0 0 0 rgba(255, 255, 255, 0.00); 
+        color: #333;
+    }
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 40px #d5de00;
+        color: rgba(51, 51, 51, 0.50);
+    }
+    100% { 
+        text-shadow: 0 0 0 rgba(255, 255, 255, 0.00); 
+        color: #333;
+    }
+}

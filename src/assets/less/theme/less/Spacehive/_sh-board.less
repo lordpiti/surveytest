@@ -1,0 +1,131 @@
+// Core variables and mixins
+@import "_variables.less";
+
+//
+// Board
+// --------------------------------------------------
+
+.sh-board {
+
+    .advisor {
+
+        a {
+            text-decoration: none;
+
+            .panel {
+                margin-bottom: 30px;
+
+                .advisor-caption {
+                    padding: 15px 30px 15px 0;
+
+                    strong {
+                        color: @text-color;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Deprecated, 2 column accordion
+
+/*.sh-board {
+    
+    &.panel-group {
+
+        .panel {
+            background-color: transparent;
+            margin-bottom: 30px;
+            position: relative;
+
+            &+ .panel {
+                margin-top: 0;
+            }
+
+            .panel-heading {
+                padding: 0;
+
+                .panel-title {
+                    background-color: @white;
+                    border: 1px solid #ddd;
+
+                    a {
+                        display: block;
+                        position: relative;
+
+                        &:after {
+                            color: @brand-primary;
+                            content: "\f0d7";
+                            font-family: 'FontAwesome';
+                            font-size: 2em;
+                            position: absolute;
+                            right: 15px;
+                            top: 25%;
+                        }
+
+                        &.collapsed {
+
+                            &:after {
+                                content: "\f0d9";
+                            }
+                        }
+
+                        .row {
+                            margin-left: 0;
+                            margin-right: 0;
+
+                            .advisor-img {
+                                padding-left: 0;
+                            }
+
+                            .advisor-caption {
+                                padding-left: 0;
+                                padding-right: 40px;
+                                padding-bottom: 15px;
+
+                                .text-muted {
+                                    color: @gray-light;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .panel-collapse {
+                padding-right: 15px;
+                position: absolute;
+
+                &[aria-expanded="false"] {
+                    z-index: 10;
+                }
+
+                &[aria-expanded="true"] {
+                    z-index: 20;
+                }
+
+                &.collapse.in {
+                    z-index: 20;
+                }
+
+                .panel-body {
+                    background-color: @white;
+                    border: 1px solid #ddd;
+                    border-top: 0;
+                }
+
+            }
+        }
+    }
+}
+
+@media (max-width: @screen-xs) {
+    .panel-title {
+
+        h3 {
+            font-size: 100%;
+        }
+    }
+}*/
+

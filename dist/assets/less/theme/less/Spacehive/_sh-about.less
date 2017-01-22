@@ -1,0 +1,123 @@
+﻿@import "_variables.less";
+
+.sh-about {
+    h1, h2, h3 {
+        font-family: Arvo,serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .numeric.small {
+        font-size: 2.7em;
+        line-height: 42px;
+    }
+
+    .quote-arrow-down {
+        position: absolute;
+        right: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-left: 24px solid transparent;
+        border-top: 26px solid @brand-primary;
+        bottom: 25px;
+    }
+
+    .team {
+        img {
+            position: relative;
+            max-width: 150px;
+            z-index: 100;
+        }
+
+
+        .slick-slide {
+            position: relative;
+            z-index: 100;
+        }
+    }
+
+    .slick-prev, .slick-next {
+        z-index: 400;
+    }
+
+    .slick-prev {
+        left: 6px;
+    }
+
+    .slick-next {
+        right: 6px;
+    }
+
+    .slick-prev:before, .slick-next:before {
+        color: black;
+    }
+
+    .slick-slider {
+        margin-bottom: 0;
+    }
+
+    .quoteBox {
+        width: 211px;
+        position: relative;
+        float: right;
+        margin-right: @font-size-base;
+    }
+
+    .lightbulb-about {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        top: -266px;
+        width: 600px;
+    }
+}
+
+
+@media (max-width: @screen-sm-max) {
+    .sh-about {
+        .quoteBox {
+            float: none;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .sh-about {
+        .lightbulb-about {
+            width: 462px;
+            top: -206px;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .sh-about {
+        .lightbulb-about {
+            width: 530px;
+            top: -235px;
+        }
+    }
+}
+
+@media screen and (max-width: @screen-sm-max) {
+    .sh-about {
+        .lightbulb-about {
+            width: 370px;
+            top: -165px;
+        }
+    }
+}
+
+
+@media screen and (max-width: @screen-xs-min) {
+    .sh-about {
+        .jumbo-media {
+            height: 170px;
+        }
+    }
+}

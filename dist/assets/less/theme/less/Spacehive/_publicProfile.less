@@ -1,0 +1,223 @@
+﻿@import "_variables.less";
+
+
+.publicProfile-t0 {
+    li {
+        padding: 5px 0;
+    }
+
+    .socialMedia {
+
+        .fa {
+            vertical-align: middle;
+        }
+
+        > span {
+            max-width: 200px;
+            vertical-align: middle;
+        }
+    }
+}
+
+.orgPublicProfile {
+
+    h2 {
+        font-size: 24px;
+    }
+
+    /*.mejs-overlay {
+        background-color: @brand-primary;
+    }*/
+
+    .orgBioSection {
+        min-height: 500px;
+        padding-right: 40px;
+        margin-top: 150px;
+
+        &:after {
+            background-color: transparent;
+            border-right: 1px solid #ddd;
+            -webkit-box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            box-sizing: content-box;
+            content: "";
+            height: 100%;
+            position: absolute;
+            top: 30px;
+            width: 35px;
+            z-index: -1;
+            right: 18px;
+        }
+       
+    }
+
+     .orgBioSection.no-border{
+          &:after {
+              border:none !important;
+          }
+     }
+    .org-video-wrapper .mejs-container {
+        height: 189px !important;
+    }
+
+    .topCover {
+        position: relative;
+        height: 100%;
+
+        .profileImgContainer {
+            top: 20px;
+            position: relative;
+            height: 58px;
+
+            .profileImage {
+                position: absolute;
+                height: 210px;
+                width: 210px;
+                background: white;
+                border: 5px solid white;
+                text-align: center;
+                z-index: 1000;
+                box-shadow: 0 0 0 1px black;
+            }
+        }
+    }
+
+    .nav-tabs {
+        white-space: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+
+        & > li {
+            float: none;
+            display: inline-block;
+            margin-right: 10px;
+        }
+    }
+
+    .collapsible-text {
+        overflow: hidden;
+        padding-bottom: 1.5em;
+        position: relative;
+        max-height: 292px;
+        -webkit-transition: max-height 1s;
+        -moz-transition: max-height 1s;
+        -o-transition: max-height 1s;
+        transition: max-height 1s;
+    }
+
+    .collapsed {
+        max-height: 5000px !important;
+
+        .read-more {
+            a {
+                cursor: pointer;
+
+                &:after {
+                    content: "- Less";
+                }
+            }
+        }
+    }
+
+    .read-more {
+        display: block;
+        background: #fff;
+        background: -moz-linear-gradient(top,rgba(255,255,255, 0.5) 0,#fff 30%);
+        background: -webkit-gradient(linear,left top,left bottom,color-stop(0,rgba(255,255,255, 0.5)),color-stop(30%,#fff));
+        background: -webkit-linear-gradient(top,rgba(255,255,255, 0.5) 0,#fff 30%);
+        background: -o-linear-gradient(top,rgba(255,255,255, 0.5) 0,#fff 30%);
+        background: -ms-linear-gradient(top,rgba(255,255,255, 0.5) 0,#fff 30%);
+        background: linear-gradient(to bottom,rgba(255,255,255, 0.5) 0,#fff 30%);
+        bottom: 0;
+        height: 2.5em;
+        line-height: 2.5em;
+        position: absolute;
+        text-align: left;
+        width: 100%;
+        font-weight: bold;
+        cursor: pointer;
+
+        a {
+            &:after {
+                content: "+ More";
+            }
+        }
+    }
+
+    .grant-banner{
+        height:200px;
+        .img-banner{
+            max-height:200px;
+        }
+    }
+    .img-overlay-wrapper {
+        max-width: 360px;
+    }
+}
+
+@media (max-width: @screen-md-min) {
+    .orgPublicProfile {
+        .highlights {
+            border-top: 1px solid #ddd;
+        }
+    }
+}
+
+@media (max-width: @screen-md-max) {
+    .orgPublicProfile {
+        .orgBioSection {
+            padding-right: 10px;
+
+            &:after {
+                right: 0;
+            }
+        }
+
+        .org-video-wrapper .mejs-container {
+            height: 153px !important;
+        }
+    }
+}
+
+@media (max-width: @screen-xs-max) {
+    .publicProfile-t0 {
+        .topSection {
+            text-align: center;
+
+            .userInfo {
+                margin-top: 0;
+            }
+
+            img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    }
+
+    .orgPublicProfile {
+        .topCover {
+            .profileImgContainer {
+                display: table;
+                height: 385px;
+                top: 0;
+
+                .profileImage {
+                    position: relative;
+                    height: 130px;
+                    width: 130px;
+                }
+            }
+        }
+
+        .nav-tabs > li {
+            margin-right: 0;
+        }
+        
+        .org-video-wrapper .mejs-container {
+            height: 260px !important;
+        }
+
+    }
+}

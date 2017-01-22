@@ -1,0 +1,42 @@
+// Core variables and mixins
+@import "_variables.less";
+
+@infobox-icon-side: 92px;
+@infobox-icon-padding: 11px;
+
+//
+// Infoboxes
+// --------------------------------------------------
+
+.sh-infoboxes {
+    background-position: center center;
+    background-size: cover;
+    
+    .infobox-icon {
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        height: @infobox-icon-side;
+        margin: -(@infobox-icon-side/2 + @infobox-icon-padding + @panel-body-padding) auto @panel-body-padding*2;
+        padding: @infobox-icon-padding;
+        width: @infobox-icon-side;
+    }
+}
+
+// Specific background images 
+
+#how_corporates {
+    background-image: url('/Content/images/about-us/abstract-section-for-spacehive-for-corporates.jpg');
+}
+
+#how_people {
+    background-image: url('/Content/images/about-us/abstract-background-spacehive-for-people.jpg');
+}
+
+#how_towns_cities {
+    background-image: url('/Content/images/about-us/abstract-section-spacehive-for-towns.jpg');
+}
+
+#how_grantmakers {
+    background-image: url('/Content/images/about-us/abstract-background-for-grantmakers.jpg');
+}

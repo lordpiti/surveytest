@@ -1,0 +1,305 @@
+<div *ngIf="CurrentProjectFollowedData.IsComplete">
+	This survey has already been completed
+</div>
+
+<div *ngIf="!CurrentProjectFollowedData.IsComplete">
+	<div *ngIf="LastStepCompleted==0">
+		<div class="row">
+			<div class="col-sm-1">
+				<img src="assets/images/local-area.png" width="70px" />
+			</div>
+			<div class="col-sm-11 padding-top1 sectionTitle" >
+				<div class="xl">What impact has this project had on your area?</div>
+					<div class="margin-top2">
+					<form novalidate #step1Form="ngForm"  id="step1Form" name="step1Form" [error-form]="step1Form" [displayErrors]="displayErrors" class="no-margin">
+						<p class="bold">I think this project:</p>
+						<div class="form-group row margin-top1">
+				
+				        	<div class="reasonPledging borderPurple" [ngClass]="{'selectedReason': item.Selected }" *ngFor="let item of SurveyData.ImpactList;let i=index">
+					            <label class="font-normal no-margin pointer">
+					                 <input type="checkbox" class="hidden" name="Impact[{{i}}]" id="Impact[{{i}}]" [(ngModel)]="item.Selected" (ngModelChange)="checkedImpactAreas(step1Form)"><span class="labelText">{{item.Name}}</span>
+					            </label>
+					        </div>
+
+							<input [required]="(SurveyData.ImpactList | filterBy: { Selected: true }).length == 0" type="hidden" class="hidden validateHidden" [(ngModel)]="hiddenFilledImpactArea" #ImpactAreasHidden="ngModel" name="hiddenFilledImpactArea" id="hiddenFilledImpactArea" />
+			 	        </div>
+			 	        <div class="row">
+				 	        <div class="col-sm-12">
+				 	        	<div *ngIf="ImpactAreasHidden.invalid && ImpactAreasHidden.touched">
+					            	<label class="validation-error-label">Please select at least one impact</label>
+					        	</div>
+				 	        </div>
+				 	        <div class="col-sm-12 text-right">
+				 	        	<button type="button" class="btn btn-primary marked bold" (click)="goToStep(LastStepCompleted+1, step1Form)">SAVE & NEXT</button>
+				 	        </div>
+			 	        </div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div *ngIf="LastStepCompleted==1">
+		<div class="row">
+			<div class="col-sm-1">
+				<img src="assets/images/local-area.png" width="70px" />
+			</div>
+			<div class="col-sm-11 padding-top1 sectionTitle">
+				<p class="xl">What impact has this project had on your area?</p>
+				<div class="margin-top2 bold">Does this project make you feel any differently about your area?</div>
+				<form #step2Form="ngForm" novalidate id="step2Form" name="step2Form" [error-form]="step2Form" [displayErrors]="displayErrors" class="no-margin" >
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="selectBarContainer">
+								<div class="selectBarLine"></div>
+								<div class="selectBarBullet bullet0" (click)="SurveyData.FeelsLike = 0">
+									<div *ngIf="SurveyData.FeelsLike == 0" class="facePin sadFacePin"></div>
+								</div>
+								<div class="selectBarBullet bullet2of4" (click)="SurveyData.FeelsLike = 1">
+									<div *ngIf="SurveyData.FeelsLike == 1" class="facePin normalFacePin"></div>
+								</div>
+								<div class="selectBarBullet bullet3of4" (click)="SurveyData.FeelsLike = 2">
+									<div *ngIf="SurveyData.FeelsLike == 2" class="facePin happyFacePin"></div>
+								</div>
+								<div class="selectBarBullet bulletLast" (click)="SurveyData.FeelsLike = 3">
+									<div *ngIf="SurveyData.FeelsLike == 3" class="facePin veryHappyFacePin"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row margin-top2">
+						<div class="col-sm-2">Worse than before</div>
+						<div class="col-sm-4 text-center">Same as before</div>
+						<div class="col-sm-4 text-center">Better than before</div>
+						<div class="col-sm-2 text-right">Miles better​​​​​ - I love it!</div>
+					</div>
+			        <div class="row margin-top2">
+				        <div class="text-right col-sm-12">
+				        	<button type="button" class="btn btn-primary marked bold" (click)="goToStep(LastStepCompleted+1, step2Form)">SAVE & NEXT</button>	
+				        </div>  	
+			        </div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div *ngIf="LastStepCompleted==2">
+
+		<div class="row">
+			<div class="col-sm-1">
+				<img src="assets/images/local-area.png" width="70px" />
+			</div>
+			<div class="col-sm-11 padding-top1 sectionTitle">
+				<p class="xl">What impact has this project had on your area?</p>
+				<div class="margin-top2 bold">Since backing this project, do you feel like you have any more power over what happens in your local area?</div>
+
+				<form #step3Form="ngForm" novalidate id="step3Form" name="step3Form" [error-form]="step3Form" [displayErrors]="displayErrors" class="no-margin">
+					
+
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="selectBarContainer">
+								<div class="selectBarLine"></div>
+
+								<div class="selectBarBullet bullet0" (click)="SurveyData.FeelsMorePower = 0">
+									<div *ngIf="SurveyData.FeelsMorePower == 0" class="faceCircle sadFaceCircle"></div>
+								</div>
+								<div class="selectBarBullet bullet2of3" (click)="SurveyData.FeelsMorePower = 1">
+									<div *ngIf="SurveyData.FeelsMorePower == 1" class="faceCircle normalFaceCircle">
+									</div>
+								</div>
+								<div class="selectBarBullet bulletLast" (click)="SurveyData.FeelsMorePower = 2">
+									<div *ngIf="SurveyData.FeelsMorePower == 2" class="faceCircle happyFaceCircle">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row margin-top2">
+						<div class="col-sm-2">No, I feel like I have less power</div>
+						<div class="col-sm-8 text-center">I feel the same as before</div>
+						<div class="col-sm-2 text-right">Yes, I feel like I have more power</div>
+					</div>
+			        <div class="row margin-top2">
+				        <div class="text-right col-sm-12">
+				        	<button type="button" class="btn btn-primary marked bold" (click)="goToStep(LastStepCompleted+1, step3Form)">SAVE & NEXT</button>	
+				        </div>  	
+			        </div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div *ngIf="LastStepCompleted==3">
+		<div class="row">
+			<div class="col-sm-1">
+				<img src="assets/images/local-area.png" width="70px" />
+			</div>
+			<div class="col-sm-11 padding-top1 sectionTitle">
+
+				<p class="xl">What impact has this project had on you?</p>
+				<div class="margin-top2">
+				<div class="bold">Have you met new people as a result of this project?</div>
+					<form #step4Form="ngForm" novalidate id="step4Form" name="step4Form" [error-form]="step4Form" [displayErrors]="displayErrors" class="no-margin">
+						<div class="margin-top1 form-group">
+							<div class="row">
+								<div class="col-sm-2">
+									<label class="font-normal">
+						             	<input type="checkbox" name="MeetNewPeople" id="MeetNewPeople" [(ngModel)]="SurveyData.MeetNewPeople" class="sh-bootstrap-switch" />
+						        	</label>
+								</div>
+								<div class="col-sm-10" [hidden]="!SurveyData.MeetNewPeople">
+									<span>How many?</span>
+
+							        <input type="text" name="NumberNewPeople" id="NumberNewPeople" [(ngModel)]="SurveyData.NumberNewPeople" [required]="SurveyData.MeetNewPeople" #NumberNewPeople="ngModel" class="margin-left1 border border-green">
+								</div>
+							</div>
+							<div class="row" *ngIf="NumberNewPeople.invalid && NumberNewPeople.touched">
+								<div class="col-sm-12">
+									<label class="validation-error-label">Please enter a number of people</label>
+								</div>
+							</div>
+				        </div>
+				        
+				        <div class="bold">Have you made any new friends as a result of this project?</div>
+				        <div class="margin-top1 form-group">
+				        	<div class="row">
+				        		<div class="col-sm-2">
+									<label class="font-normal">
+							             <input type="checkbox" name="MadeNewFriends" id="MadeNewFriends" [(ngModel)]="SurveyData.MadeNewFriends" class="sh-bootstrap-switch">
+							        </label>
+						        </div>
+						        <div class="col-sm-10" [hidden]="!SurveyData.MadeNewFriends">
+						        	<span>How many?</span>
+						        	<input type="text" name="NumberNewFriends" id="NumberNewFriends" [(ngModel)]="SurveyData.NumberNewFriends" [required]="SurveyData.MadeNewFriends" #NumberNewFriends="ngModel" class="margin-left1 border border-green">
+						        </div>
+						    </div>
+						    <div class="row" *ngIf="NumberNewFriends.invalid && NumberNewFriends.touched">
+							    <div class="col-sm-12">
+							    	<label class="validation-error-label">Please enter a number of friends</label>
+							    </div>
+					        </div>
+				        </div>
+						<div class="row margin-top1">
+					        <div class="text-right col-sm-12">
+					        	<button type="button" class="btn btn-primary marked bold" (click)="goToStep(LastStepCompleted+1, step4Form)">SAVE & NEXT</button>	
+					        </div>  	
+			        	</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div *ngIf="LastStepCompleted==4">
+
+		<div class="row">
+			<div class="col-sm-1">
+				<img src="assets/images/local-area.png" width="70px" />
+			</div>
+			<div class="col-sm-11 padding-top1 sectionTitle">
+
+				<p class="xl">What impact has this project had on you?</p>
+
+				<div class="margin-top2">
+	
+					<div class="row">
+						<div class="col-sm-12">
+							<label class="font-normal">
+								 <span class="bold">Have you visited this project?</span>
+					             <input type="checkbox" name="VisitProject" id="VisitProject" [(ngModel)]="SurveyData.VisitProject" class="sh-bootstrap-switch">
+					        </label>
+						</div>
+			        </div>
+			        <div [hidden]="!SurveyData.VisitProject">
+			        	<div class="margin-top1">
+			        	
+				        		<div class="circleSelector inline-block" [ngClass]="{'orange-light white': SurveyData.TimesVisited == 1 }" (click)="SurveyData.TimesVisited = 1" >
+				        			<div class="contentText">Once</div>
+				        		</div>
+				        
+				        
+								<div class="circleSelector inline-block" [ngClass]="{'orange-light white': SurveyData.TimesVisited == 2 }" (click)="SurveyData.TimesVisited = 2">
+									<div class="contentText">2 times</div>
+								</div>
+				
+								<div class="circleSelector inline-block" [ngClass]="{'orange-light white': SurveyData.TimesVisited == 3 }" (click)="SurveyData.TimesVisited = 3">
+									<div class="contentText">3 times</div>
+								</div>
+		
+								<div class="circleSelector inline-block" [ngClass]="{'orange-light white': SurveyData.TimesVisited == 4 }" (click)="SurveyData.TimesVisited = 4">
+									<div class="contentText">4 times</div>
+								</div>
+		
+								<div class="circleSelector inline-block" [ngClass]="{'orange-light white': SurveyData.TimesVisited == 5 }" (click)="SurveyData.TimesVisited = 5">
+									<div class="contentText">5+ times</div>
+								</div>
+				
+								<div class="circleSelector inline-block" [ngClass]="{'orange-light white': SurveyData.TimesVisited == 10 }" (click)="SurveyData.TimesVisited = 10">
+									<div class="contentText">10+ times</div>
+								</div>
+						
+						</div>
+			        </div>
+
+					<div class="margin-top2 bold">As well as pledging did you support this project in any other way?</div>
+					<div class="margin-top1">
+					    <div class="reasonPledging borderGreen" [ngClass]="{'selectedSupportOtherWay': item.Selected }" *ngFor="let item of SurveyData.SupportOtherWay;let i=index">
+				            <label class="font-normal no-margin pointer">
+				            	<input type="checkbox" class="hidden" name="SupportOtherWay[{{i}}]" id="SupportOtherWay[{{i}}]" [(ngModel)]="item.Selected"><span class="labelText">{{item.Name}}</span>
+				            </label>
+				        </div>
+
+
+				        <div class="row margin-top2">
+					        <div class="text-right col-sm-12">
+					        	<button type="button" class="btn btn-primary marked bold" (click)="goToStep(LastStepCompleted+1, null)">SAVE & NEXT</button>	
+					        </div>  	
+				        </div>
+
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+
+	<div *ngIf="LastStepCompleted==5">
+		<div class="row">
+			<div class="col-sm-1">
+				<img src="assets/images/local-area.png" width="70px" />
+			</div>
+			<div class="col-sm-11 padding-top1 sectionTitle">
+				<p class="xl">What impact has this project had on you?</p>
+				<div class="margin-top2 bold">In one sentence, summarise what this projects means to you</div>
+
+				<div class="form-group margin-top1">
+					<textarea [(ngModel)]="SurveyData.ProjectMeansText" #ProjectMeansText="ngModel" class="form-control" rows="5" id="ProjectMeansText" name="ProjectMeansText" [maxlength]="500"></textarea>
+				</div>
+
+
+				<div class="row margin-top2">
+			        <div class="text-right col-sm-12">
+			        	<button type="button" class="btn btn-primary marked bold" (click)="goToStep(LastStepCompleted+1, null)">FINISH</button>	
+			        </div>  	
+		        </div>
+			</div>
+		</div>
+	</div>
+
+	<div *ngIf="LastStepCompleted>5">
+		<div class="thankYouContainer">
+			<div class="contentText">
+				<div class="arrow_box xl padding2">Thank you! We really appreciate it!</div>
+				<div class="margin-top2">
+					<img src="{{CurrentProjectFollowedData.ProjectCreatorPicture.Url}}" class="organisationLogoCircle"  /> 
+				</div>
+				<!-- <div class="btn btn-primary marked margin-top2 bold">CHECK OUT OUR DELIVERY REPORT</div> -->
+
+			</div>
+		</div>
+
+	</div>
+</div>

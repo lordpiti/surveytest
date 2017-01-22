@@ -1,0 +1,339 @@
+// Core variables and mixins
+@import "_variables.less";
+
+@timeline-badge-side:   50px;
+
+@timeline-color:        @gray-light;
+@timeline-dot-radius:   @font-size-base/2;
+@timeline-dot-border:   3px;
+
+//
+// Timeline
+// --------------------------------------------------
+
+/* Spacehive timeline */
+
+.sh-timeline-right {
+    margin-left: @timeline-dot-radius;
+    border-left: @timeline-dot-border solid @timeline-color;
+
+    &> li {
+        margin-bottom: 4em;
+        padding-left: @timeline-dot-radius*2;
+        position: relative;
+
+        &:before {
+            background-color: @white;
+            border: @timeline-dot-border solid @timeline-color;
+            border-radius: 50%;
+            content: "";
+            display: block;
+            height: @timeline-dot-radius*2;
+            left: -(@timeline-dot-radius + @timeline-dot-border/2);
+            position: absolute;
+            top: 0;
+            width: @timeline-dot-radius*2;
+        }
+    }
+}
+
+/* End Spacehive timeline */
+
+/* Spacehive timeline THE GOOD ONE */
+
+.sh-timeline {
+
+    .action-title {
+        background-color: @gray-lighter;
+        color: @gray-brand;
+        min-height: 2em;
+        padding: 0.5em 1.5em 0.5em 0.5em;
+        position: relative;
+
+        &:after {
+            background-color: inherit;
+            border-radius: 0 100% 100% 0;
+            content: "";
+            height: 100%;
+            position: absolute;
+            right: -1.5em;
+            top: 0;
+            width: 3em;
+        }
+
+        .action-status {
+            bottom: 25%;
+            position: absolute;
+            right: 0;
+            z-index: 1;
+        }
+
+        .status-success {
+            display: none;
+        }
+    }
+
+    .journey-steps {
+        display: none;
+
+        .publish-btn.btn-block {
+            display: none;
+        }
+    }
+
+    
+
+    &> .event-success {
+
+        .action-title {
+            background-color: @brand-success;
+            color: @white;
+
+            .status-success {
+                display: block;
+            }
+        }
+    }
+
+    &> .event-primary {
+
+        .action-title {
+            background-color: @brand-primary;
+            color: @white;
+        }
+
+        .journey-steps {
+            display: block;
+
+            &.ready-to-publish {
+
+                .btn {
+                    display: none;
+                }
+
+                .publish-btn.btn-block {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    ol.circle-number {
+
+        li {
+
+            &:before {
+                background-color: @gray-brand;
+            }
+
+            .fa-check,
+            .label-primary {
+                display: none;
+            }
+
+            &.text-success {
+
+                &:before {
+                    background-color: @brand-success;
+                }
+
+                .fa-check {
+                    display: inline-block;
+                }
+            }
+
+            &.text-primary {
+
+                &:before {
+                    background-color: @brand-primary;
+                }
+
+                .label-primary {
+                    display: inline;
+                }
+            }
+        }
+    }
+}
+
+/* End Spacehive timeline */
+
+.timeline {
+    list-style: none;
+    padding: 0;
+    position: relative;
+}
+.timeline:before {
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    content:" ";
+    width: 3px;
+    background-color: @gray-lighter;
+    left: 50%;
+    margin-left: -1.5px;
+}
+.timeline > li {
+    margin-bottom: 20px;
+    min-height: @timeline-badge-side;
+    position: relative;
+}
+.timeline > li:before, .timeline > li:after {
+    content:" ";
+    display: table;
+}
+.timeline > li:after {
+    clear: both;
+}
+.timeline > li > .timeline-panel {
+    width: 46%;
+    float: left;
+    border: 1px solid #d4d4d4;
+    border-radius: 2px;
+    padding: 20px;
+    position: relative;
+    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+}
+.timeline > li > .timeline-panel:before {
+    position: absolute;
+    top: 10px;
+    right: -15px;
+    display: inline-block;
+    border-top: 15px solid transparent;
+    border-left: 15px solid #ccc;
+    border-right: 0 solid #ccc;
+    border-bottom: 15px solid transparent;
+    content:" ";
+}
+.timeline > li > .timeline-panel:after {
+    position: absolute;
+    top: 11px;
+    right: -14px;
+    display: inline-block;
+    border-top: 14px solid transparent;
+    border-left: 14px solid #fff;
+    border-right: 0 solid #fff;
+    border-bottom: 14px solid transparent;
+    content:" ";
+}
+.timeline > li > .timeline-badge {
+    color: @white;
+    width: @timeline-badge-side;
+    height: @timeline-badge-side;
+    line-height: @timeline-badge-side;
+    font-size: 1.4em;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -25px;
+    background-color: @gray-light;
+    z-index: 100;
+    border-radius: 50%;
+}
+.timeline > li.timeline-inverted > .timeline-panel {
+    float: right;
+}
+.timeline > li.timeline-inverted > .timeline-panel:before {
+    border-left-width: 0;
+    border-right-width: 15px;
+    left: -15px;
+    right: auto;
+}
+.timeline > li.timeline-inverted > .timeline-panel:after {
+    border-left-width: 0;
+    border-right-width: 14px;
+    left: -14px;
+    right: auto;
+}
+.timeline-badge.primary {
+    background-color: @brand-primary !important;
+}
+.timeline-badge.success {
+    background-color: @brand-success !important;
+}
+.timeline-badge.warning {
+    background-color: @brand-warning !important;
+}
+.timeline-badge.danger {
+    background-color: @brand-danger !important;
+}
+.timeline-badge.info {
+    background-color: @brand-info !important;
+}
+.timeline-title {
+    margin-top: 0;
+    color: inherit;
+}
+.timeline-body > p, .timeline-body > ul {
+    margin-bottom: 0;
+}
+.timeline-body > p + p {
+    margin-top: 5px;
+}
+.timeline-body {
+
+    ol.circle-number {
+
+        li {
+
+            &:before {
+                background-color: @gray-light;
+            }
+
+            .fa-check,
+            .label-primary {
+                display: none;
+            }
+
+            &.text-success {
+
+                &:before {
+                    background-color: @brand-success;
+                }
+
+                .fa-check {
+                    display: inline-block;
+                }
+            }
+
+            &.text-primary {
+
+                &:before {
+                    background-color: @brand-primary;
+                }
+
+                .label-primary {
+                    display: inline;
+                }
+            }
+        }
+    }
+}
+@media (max-width: @screen-sm-max) {
+    ul.timeline:before {
+        left: 40px;
+    }
+    ul.timeline > li > .timeline-panel {
+        float: right;
+        width: 88%;
+    }
+    ul.timeline > li > .timeline-badge {
+        left: 15px;
+        margin-left: 0;
+    }
+    ul.timeline > li > .timeline-panel:before {
+        border-left-width: 0;
+        border-right-width: 15px;
+        left: -15px;
+        right: auto;
+    }
+    ul.timeline > li > .timeline-panel:after {
+        border-left-width: 0;
+        border-right-width: 14px;
+        left: -14px;
+        right: auto;
+    }
+}
+
