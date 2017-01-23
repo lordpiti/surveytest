@@ -31,7 +31,7 @@ export class SurveyService {
         this._requestOptions = new RequestOptions({
             headers: myHeaders
         });
-        this._apiUrl = "http://spacehivedevapi.azurewebsites.net";
+        this._apiUrl = "https://spacehivedevapi.azurewebsites.net";
         this._lastStepCompleted = 0;
         this._impactList = [
     	 { Id: 1, Name: "makes the area safer", Selected: false },
