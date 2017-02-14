@@ -18,7 +18,8 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
-        "assets/less/spacehive/spacehive.less"
+        "assets/less/spacehive/spacehive.less",
+		"../bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css"
       ],
       "scripts": [
 	  "../bower_components/jquery/dist/jquery.min.js",
