@@ -13,13 +13,15 @@
 	</div>
 	<div class="col-sm-8" *ngIf="ProjectFollowedData">
 
-		<div *ngIf="IsMain" >
-			<img src="{{ProjectFollowedData.ProjectPicture.Url}}" *ngIf="!ProjectFollowedData.ProjectVideo" class="img-responsive">
-			<video style="width:100%;height:100%;" id="dsf" class="mediaelement-player sh-mediaelementplayer" controls="controls" preload="none" 
-			poster="//sbndv3.cloudimg.io/s/crop/755x425{{ProjectFollowedData.ProjectPicture.Url}}" *ngIf="ProjectFollowedData.ProjectVideo">
-            	<source type="video/mp4" src="{{ProjectFollowedData.ProjectVideo.Url}}" />
-        	</video>
-		</div>
+        <div *ngIf="IsMain" >
+            <img src="{{ProjectFollowedData.ProjectPicture.Url}}" *ngIf="!ProjectFollowedData.ProjectVideo" class="img-responsive">
+            <img src="{{ProjectFollowedData.ProjectVideo.Url}}" *ngIf="ProjectFollowedData.ProjectVideo  && !ProjectFollowedData.ProjectVideo.IsVideo" class="img-responsive">
+            <video style="width:100%;height:100%;" id="dsf" class="mediaelement-player sh-mediaelementplayer" controls="controls" preload="none"
+            poster="//sbndv3.cloudimg.io/s/crop/755x425{{ProjectFollowedData.ProjectPicture.Url}}" *ngIf="ProjectFollowedData.ProjectVideo && ProjectFollowedData.ProjectVideo.IsVideo">
+                <source type="video/mp4" src="{{ProjectFollowedData.ProjectVideo.Url}}" />
+            </video>
+        </div>
+
 		<div class="padding1 {{BackgroundRightPanelClass}}" [hidden]="IsMain">
 			<router-outlet></router-outlet>
 		</div>

@@ -10,6 +10,7 @@ import { ProjectSurveyComponent } from './components/project-survey/project-surv
 import { Step1Component } from './components/project-survey/step1/step1.component';
 import { BootstrapSwitchDirective } from './directives/bootstrap-switch.directive';
 import { MediaElementPlayerDirective } from './directives/media-element-player.directive';
+import { MinValueDirective } from './directives/min-value.directive';
 import { DisplayValidationErrors } from './directives/validation-errors.directive';
 import { Ng2FilterPipe } from 'ng2-filter-pipe';
 
@@ -19,7 +20,7 @@ import { Ng2FilterPipe } from 'ng2-filter-pipe';
     ProjectSurveyComponent,
     Step1Component,
     BootstrapSwitchDirective,
-    MediaElementPlayerDirective,
+    MediaElementPlayerDirective, MinValueDirective,
     DisplayValidationErrors, Ng2FilterPipe
   ],
   imports: [

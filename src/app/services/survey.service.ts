@@ -41,7 +41,7 @@ export class SurveyService {
     	 { Id: 5, Name: "helps my business", Selected: false },
     	 { Id: 6, Name: "helps the local economy", Selected: false },
     	 { Id: 7, Name: "makes the area more attractive", Selected: false },
-    	 { Id: 8, Name: "boots the value of my property", Selected: false },
+         { Id: 8, Name: "boost the value of my property", Selected: false },
     	 { Id: 9, Name: "makes the area more fun", Selected: false },
     	 { Id: 10, Name: "adds character to the area", Selected: false },
     	 { Id: 11, Name: "makes the area more family friendly", Selected: false },

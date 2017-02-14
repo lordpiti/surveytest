@@ -16,8 +16,9 @@
 						<div class="form-group row margin-top1">
 				
 				        	<div class="reasonPledging borderPurple" [ngClass]="{'selectedReason': item.Selected }" *ngFor="let item of SurveyData.ImpactList;let i=index">
-					            <label class="font-normal no-margin pointer">
-					                 <input type="checkbox" class="hidden" name="Impact[{{i}}]" id="Impact[{{i}}]" [(ngModel)]="item.Selected" (ngModelChange)="checkedImpactAreas(step1Form)"><span class="labelText">{{item.Name}}</span>
+                                <label class="font-normal no-margin pointer padding1">
+                                     <input type="checkbox" class="hidden" name="Impact[{{i}}]" id="Impact[{{i}}]" [(ngModel)]="item.Selected" (ngModelChange)="checkedImpactAreas(step1Form)">
+                                     <span class="labelText">{{item.Name}}</span>
 					            </label>
 					        </div>
 
@@ -74,7 +75,10 @@
 						<div class="col-sm-2 text-right">Miles better​​​​​ - I love it!</div>
 					</div>
 			        <div class="row margin-top2">
-				        <div class="text-right col-sm-12">
+				    	<div class="col-sm-6">
+                            <button type="button" class="btn btn-primary marked bold" (click)="goToStep(LastStepCompleted-1, step2Form)">SAVE & PREVIOUS</button>
+                        </div>
+                        <div class="text-right col-sm-6">
 				        	<button type="button" class="btn btn-primary marked bold" (click)="goToStep(LastStepCompleted+1, step2Form)">SAVE & NEXT</button>	
 				        </div>  	
 			        </div>
@@ -91,7 +95,7 @@
 			</div>
 			<div class="col-sm-11 padding-top1 sectionTitle">
 				<p class="xl">What impact has this project had on your area?</p>
-				<div class="margin-top2 bold">Since backing this project, do you feel like you have any more power over what happens in your local area?</div>
+                <div class="margin-top2 bold">Since backing this project, do you feel you have more say in what happens in your local area?</div>
 
 				<form #step3Form="ngForm" novalidate id="step3Form" name="step3Form" [error-form]="step3Form" [displayErrors]="displayErrors" class="no-margin">
 					
@@ -117,12 +121,15 @@
 					</div>
 
 					<div class="row margin-top2">
-						<div class="col-sm-2">No, I feel like I have less power</div>
+						<div class="col-sm-2">No, I feel like I have less say</div>
 						<div class="col-sm-8 text-center">I feel the same as before</div>
-						<div class="col-sm-2 text-right">Yes, I feel like I have more power</div>
+						<div class="col-sm-2 text-right">Yes, I feel like I have more say</div>
 					</div>
 			        <div class="row margin-top2">
-				        <div class="text-right col-sm-12">
+				    	<div class="col-sm-6">
+                            <button type="button" class="btn btn-primary marked bold" (click)="goToStep(LastStepCompleted-1, step3Form)">SAVE & PREVIOUS</button>
+                        </div>
+                        <div class="text-right col-sm-6">
 				        	<button type="button" class="btn btn-primary marked bold" (click)="goToStep(LastStepCompleted+1, step3Form)">SAVE & NEXT</button>	
 				        </div>  	
 			        </div>
@@ -134,7 +141,7 @@
 	<div *ngIf="LastStepCompleted==3">
 		<div class="row">
 			<div class="col-sm-1">
-				<img src="assets/images/local-area.png" width="70px" />
+                <img src="/assets/images/volunteering-impact.png" width="70px" />
 			</div>
 			<div class="col-sm-11 padding-top1 sectionTitle">
 
@@ -149,15 +156,15 @@
 						             	<input type="checkbox" name="MeetNewPeople" id="MeetNewPeople" [(ngModel)]="SurveyData.MeetNewPeople" class="sh-bootstrap-switch" />
 						        	</label>
 								</div>
-								<div class="col-sm-10" [hidden]="!SurveyData.MeetNewPeople">
+                                <div class="col-sm-10" *ngIf="SurveyData.MeetNewPeople">
 									<span>How many?</span>
 
-							        <input type="text" name="NumberNewPeople" id="NumberNewPeople" [(ngModel)]="SurveyData.NumberNewPeople" [required]="SurveyData.MeetNewPeople" #NumberNewPeople="ngModel" class="margin-left1 border border-green">
-								</div>
-							</div>
-							<div class="row" *ngIf="NumberNewPeople.invalid && NumberNewPeople.touched">
-								<div class="col-sm-12">
-									<label class="validation-error-label">Please enter a number of people</label>
+							        <input type="number" name="NumberNewPeople" id="NumberNewPeople" [(ngModel)]="SurveyData.NumberNewPeople" [required]="SurveyData.MeetNewPeople" #NumberNewPeople="ngModel" class="margin-left1 border border-green" minValue="1">
+                                    <div class="row" *ngIf="NumberNewPeople.invalid && NumberNewPeople.touched">
+                                        <div class="col-sm-12">
+                                            <label class="validation-error-label">Please enter a number of people</label>
+                                        </div>
+                                    </div>
 								</div>
 							</div>
 				        </div>
@@ -170,19 +177,22 @@
 							             <input type="checkbox" name="MadeNewFriends" id="MadeNewFriends" [(ngModel)]="SurveyData.MadeNewFriends" class="sh-bootstrap-switch">
 							        </label>
 						        </div>
-						        <div class="col-sm-10" [hidden]="!SurveyData.MadeNewFriends">
+                                <div class="col-sm-10" *ngIf="SurveyData.MadeNewFriends">
 						        	<span>How many?</span>
-						        	<input type="text" name="NumberNewFriends" id="NumberNewFriends" [(ngModel)]="SurveyData.NumberNewFriends" [required]="SurveyData.MadeNewFriends" #NumberNewFriends="ngModel" class="margin-left1 border border-green">
-						        </div>
+                                    <input type="number" name="NumberNewFriends" id="NumberNewFriends" [(ngModel)]="SurveyData.NumberNewFriends" [required]="SurveyData.MadeNewFriends" #NumberNewFriends="ngModel" class="margin-left1 border border-green" minValue="1">
+                                    <div class="row" *ngIf="NumberNewFriends.invalid && NumberNewFriends.touched">
+                                        <div class="col-sm-12">
+                                            <label class="validation-error-label">Please enter a number of friends</label>
+                                        </div>
+                                    </div>
+                                </div>
 						    </div>
-						    <div class="row" *ngIf="NumberNewFriends.invalid && NumberNewFriends.touched">
-							    <div class="col-sm-12">
-							    	<label class="validation-error-label">Please enter a number of friends</label>
-							    </div>
-					        </div>
 				        </div>
 						<div class="row margin-top1">
-					        <div class="text-right col-sm-12">
+					    	<div class="col-sm-6">
+                                <button type="button" class="btn btn-primary marked bold" (click)="goToStep(LastStepCompleted-1, step4Form)">SAVE & PREVIOUS</button>
+                            </div>
+                            <div class="text-right col-sm-6">
 					        	<button type="button" class="btn btn-primary marked bold" (click)="goToStep(LastStepCompleted+1, step4Form)">SAVE & NEXT</button>	
 					        </div>  	
 			        	</div>
@@ -196,7 +206,7 @@
 
 		<div class="row">
 			<div class="col-sm-1">
-				<img src="assets/images/local-area.png" width="70px" />
+                <img src="/assets/images/volunteering-impact.png" width="70px" />
 			</div>
 			<div class="col-sm-11 padding-top1 sectionTitle">
 
@@ -246,14 +256,17 @@
 					<div class="margin-top2 bold">As well as pledging did you support this project in any other way?</div>
 					<div class="margin-top1">
 					    <div class="reasonPledging borderGreen" [ngClass]="{'selectedSupportOtherWay': item.Selected }" *ngFor="let item of SurveyData.SupportOtherWay;let i=index">
-				            <label class="font-normal no-margin pointer">
+				            <label class="font-normal no-margin pointer padding1">
 				            	<input type="checkbox" class="hidden" name="SupportOtherWay[{{i}}]" id="SupportOtherWay[{{i}}]" [(ngModel)]="item.Selected"><span class="labelText">{{item.Name}}</span>
 				            </label>
 				        </div>
 
 
 				        <div class="row margin-top2">
-					        <div class="text-right col-sm-12">
+                            <div class="col-sm-6">
+                                <button type="button" class="btn btn-primary marked bold" (click)="goToStep(LastStepCompleted-1, null)">SAVE & PREVIOUS</button>
+                            </div>
+                            <div class="text-right col-sm-6">
 					        	<button type="button" class="btn btn-primary marked bold" (click)="goToStep(LastStepCompleted+1, null)">SAVE & NEXT</button>	
 					        </div>  	
 				        </div>
@@ -269,7 +282,7 @@
 	<div *ngIf="LastStepCompleted==5">
 		<div class="row">
 			<div class="col-sm-1">
-				<img src="assets/images/local-area.png" width="70px" />
+                <img src="/assets/images/volunteering-impact.png" width="70px" />
 			</div>
 			<div class="col-sm-11 padding-top1 sectionTitle">
 				<p class="xl">What impact has this project had on you?</p>
@@ -281,7 +294,10 @@
 
 
 				<div class="row margin-top2">
-			        <div class="text-right col-sm-12">
+                    <div class="col-sm-6">
+                        <button type="button" class="btn btn-primary marked bold" (click)="goToStep(LastStepCompleted-1, null)">SAVE & PREVIOUS</button>
+                    </div>
+                    <div class="text-right col-sm-6">
 			        	<button type="button" class="btn btn-primary marked bold" (click)="goToStep(LastStepCompleted+1, null)">FINISH</button>	
 			        </div>  	
 		        </div>
@@ -297,7 +313,7 @@
 					<img src="{{CurrentProjectFollowedData.ProjectCreatorPicture.Url}}" class="organisationLogoCircle"  /> 
 				</div>
 				<!-- <div class="btn btn-primary marked margin-top2 bold">CHECK OUT OUR DELIVERY REPORT</div> -->
-
+                <a href="https://www.spacehive.com/{{CurrentProjectFollowedData.ProjectUrl}}#/deliveryReport" *ngIf="CurrentProjectFollowedData.IsDeliveryReportPublished" class="btn btn-primary marked margin-top2 bold">CHECK OUT OUR DELIVERY REPORT</a>
 			</div>
 		</div>
 

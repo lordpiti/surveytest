@@ -32,4 +32,6 @@ export interface ProjectFollowedData {
 
     IsComplete: boolean;
 
+    IsDeliveryReportPublished: boolean;
+
 }
